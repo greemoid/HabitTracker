@@ -1,14 +1,357 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/main_background"
     tools:context=".presentation.AddTaskFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageButton
+            android:id="@+id/btn_exit"
+            android:layout_width="@dimen/size_32dp"
+            android:layout_height="@dimen/size_32dp"
+            android:layout_margin="@dimen/size_8dp"
+            android:background="@null"
+            android:contentDescription="@string/close"
+            android:src="@drawable/ic_close"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etTitle"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_16dp"
+            android:background="@drawable/edit_text_background"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="@string/type_name_of_task"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:maxLines="1"
+            android:padding="@dimen/size_8dp"
+            android:paddingStart="@dimen/size_0dp"
+            android:paddingEnd="@dimen/size_0dp"
+            android:textColor="@color/main_text"
+            android:textColorHint="@color/secondary_text"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/ivPen"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_exit" />
+
+        <ImageView
+            android:id="@+id/ivPen"
+            android:layout_width="@dimen/size_24dp"
+            android:layout_height="@dimen/size_24dp"
+            android:layout_marginEnd="@dimen/size_8dp"
+            android:contentDescription="@string/type_your_name_of_task"
+            android:src="@drawable/ic_pen"
+            app:layout_constraintBottom_toBottomOf="@+id/etTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/etTitle" />
+
+        <TextView
+            android:id="@+id/tv_regular_habit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_4dp"
+            android:text="@string/regular_habit"
+            android:textColor="@color/secondary_text"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/etTitle"
+            app:layout_constraintTop_toBottomOf="@+id/etTitle" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView2"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="@dimen/size_8dp"
+            app:cardBackgroundColor="@color/background_for_other_views"
+            app:cardCornerRadius="@dimen/size_16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_regular_habit">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_icon_of_task"
+                    android:layout_width="@dimen/size_32dp"
+                    android:layout_height="@dimen/size_32dp"
+                    android:layout_margin="@dimen/size_32dp"
+                    android:contentDescription="@string/icon"
+                    android:src="@drawable/ic_pen"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/view2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/btn_choose_icon"
+                    android:layout_width="@dimen/size_0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toTopOf="@+id/view2"
+                    app:layout_constraintEnd_toEndOf="@id/view2"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@id/view2"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|start"
+                        android:layout_weight="0.8"
+                        android:text="@string/icon"
+                        android:textColor="@color/main_text"
+                        android:textSize="@dimen/text_18sp"
+                        android:textStyle="bold" />
+
+
+                    <ImageView
+                        android:layout_width="@dimen/size_32dp"
+                        android:layout_height="@dimen/size_32dp"
+                        android:layout_gravity="center_vertical|end"
+                        android:contentDescription="@string/see_icons"
+                        android:src="@drawable/ic_next" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="@dimen/size_0dp"
+                    android:layout_height="@dimen/size_1dp"
+                    android:layout_marginEnd="@dimen/size_8dp"
+                    android:background="@color/secondary_text"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/iv_icon_of_task"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <LinearLayout
+                    android:id="@+id/btn_choose_color"
+                    android:layout_width="@dimen/size_0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/view2"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/view2"
+                    app:layout_constraintTop_toBottomOf="@+id/view2">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|start"
+                        android:layout_weight="0.8"
+                        android:text="@string/color"
+                        android:textColor="@color/main_text"
+                        android:textSize="@dimen/text_18sp"
+                        android:textStyle="bold" />
+
+
+                    <ImageView
+                        android:layout_width="@dimen/size_32dp"
+                        android:layout_height="@dimen/size_32dp"
+                        android:layout_gravity="center_vertical|end"
+                        android:contentDescription="@string/see_icons"
+                        android:src="@drawable/ic_next" />
+
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tv_repeats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_16dp"
+            android:text="@string/repeat"
+            android:textColor="@color/secondary_text"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tv_regular_habit"
+            app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btn_open_repeats"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_16dp"
+            android:orientation="horizontal"
+            app:cardBackgroundColor="@color/background_for_other_views"
+            app:cardCornerRadius="@dimen/size_16dp"
+            app:layout_constraintEnd_toEndOf="@+id/cardView2"
+            app:layout_constraintStart_toStartOf="@+id/cardView2"
+            app:layout_constraintTop_toBottomOf="@+id/tv_repeats">
+
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="@dimen/size_16dp"
+                android:text="@string/repeat"
+                android:textColor="@color/main_text"
+                android:textStyle="bold" />
+
+
+            <ImageView
+                android:layout_width="@dimen/size_32dp"
+                android:layout_height="@dimen/size_32dp"
+                android:layout_gravity="center_vertical|end"
+                android:layout_margin="@dimen/size_8dp"
+                android:contentDescription="@string/see_icons"
+                android:src="@drawable/ic_next" />
+
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tv_do"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_16dp"
+            android:text="@string/do_do"
+            android:textColor="@color/secondary_text"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tv_regular_habit"
+            app:layout_constraintTop_toBottomOf="@+id/btn_open_repeats" />
+
+        <TextView
+            android:id="@+id/btn_advanced_settings"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_16dp"
+            android:padding="@dimen/size_8dp"
+            android:text="@string/advanced_settings"
+            android:textColor="@color/main_text"
+            android:textSize="@dimen/text_18sp"
+            android:textStyle="bold"
+            app:drawableEndCompat="@drawable/ic_next"
+            app:layout_constraintEnd_toEndOf="@+id/radioGroup"
+            app:layout_constraintStart_toStartOf="@+id/tv_do"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_16dp"
+            android:layout_marginEnd="@dimen/size_16dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="@+id/btn_open_repeats"
+            app:layout_constraintStart_toStartOf="@+id/tv_do"
+            app:layout_constraintTop_toBottomOf="@+id/tv_do">
+
+
+            <RadioButton
+                android:id="@+id/rb_doesnt_matter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size_0dp"
+                android:layout_marginTop="@dimen/size_8dp"
+                android:layout_marginBottom="@dimen/size_8dp"
+                android:background="@drawable/radio_part_of_the_day"
+                android:button="@android:color/transparent"
+                android:checked="true"
+                android:gravity="center"
+                android:padding="@dimen/size_16dp"
+                android:text="@string/doesnt_matter"
+                android:textColor="@color/main_text"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/rb_morning"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RadioButton
+                android:id="@+id/rb_morning"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size_0dp"
+                android:layout_marginTop="@dimen/size_8dp"
+                android:layout_marginEnd="@dimen/size_0dp"
+                android:layout_marginBottom="@dimen/size_8dp"
+                android:background="@drawable/radio_part_of_the_day"
+                android:button="@android:color/transparent"
+                android:gravity="center"
+                android:padding="@dimen/size_16dp"
+                android:text="@string/morning"
+                android:textColor="@color/main_text"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/rb_doesnt_matter"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <RadioButton
+                android:id="@+id/rb_day"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size_0dp"
+                android:layout_marginTop="@dimen/size_8dp"
+                android:layout_marginBottom="@dimen/size_8dp"
+                android:background="@drawable/radio_part_of_the_day"
+                android:button="@android:color/transparent"
+                android:gravity="center"
+                android:padding="@dimen/size_16dp"
+                android:text="@string/day"
+                android:textColor="@color/main_text"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/rb_evening"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rb_doesnt_matter" />
+
+            <RadioButton
+                android:id="@+id/rb_evening"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size_0dp"
+                android:layout_marginTop="@dimen/size_8dp"
+                android:layout_marginEnd="@dimen/size_0dp"
+                android:layout_marginBottom="@dimen/size_8dp"
+                android:background="@drawable/radio_part_of_the_day"
+                android:button="@android:color/transparent"
+                android:gravity="center"
+                android:padding="@dimen/size_16dp"
+                android:text="@string/evening"
+                android:textColor="@color/main_text"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/rb_day"
+                app:layout_constraintTop_toBottomOf="@+id/rb_morning" />
+
+
+        </RadioGroup>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_blue_button_bg"
+            android:text="@string/save"
+            android:textColor="@color/main_text"
+            android:layout_marginTop="@dimen/size_32dp"
+            android:textStyle="bold"
+            app:backgroundTint="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_advanced_settings" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

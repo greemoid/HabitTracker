@@ -1,21 +1,20 @@
 package com.greemoid.habittracker.presentation
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import com.greemoid.habittracker.R
+import android.util.Log
+import androidx.fragment.app.viewModels
+import com.greemoid.habittracker.databinding.FragmentAddTaskBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
+class AddTaskFragment :
+    BaseFragment<EmptyViewModel, FragmentAddTaskBinding>(FragmentAddTaskBinding::inflate) {
+    override val viewModel: EmptyViewModel by viewModels()
 
-class AddTaskFragment : Fragment() {
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add_task, container, false)
+    override fun init() {
+        binding.rbDay.setOnCheckedChangeListener { _, b ->
+            Log.d("RADIO", b.toString())
+        }
     }
+
 
 }

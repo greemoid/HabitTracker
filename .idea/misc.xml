@@ -3,11 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/edit_text_background.xml" value="0.4425" />
+        <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/ic_baseline_nights_stay_24.xml" value="0.4425" />
+        <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/ic_day.xml" value="0.4425" />
+        <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/ic_morning.xml" value="0.4425" />
+        <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/ic_next.xml" value="0.4425" />
+        <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/ic_pen.xml" value="0.4425" />
+        <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/radio_button_background_checked.xml" value="0.4425" />
+        <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/radio_button_background_unchecked.xml" value="0.4405" />
+        <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/radio_part_of_the_day.xml" value="0.4425" />
+        <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/rounded_blue_button_bg.xml" value="0.4425" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/rounded_button_bg.xml" value="0.4425" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/rounded_corners_bg.xml" value="0.4425" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/layout/activity_main.xml" value="0.4" />
-        <entry key="..\:/Project/HabitTracker/app/src/main/res/layout/fragment_add_task.xml" value="0.42239583333333336" />
+        <entry key="..\:/Project/HabitTracker/app/src/main/res/layout/fragment_add_task.xml" value="0.33046875" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/layout/fragment_tasks_list.xml" value="0.42239583333333336" />
+        <entry key="..\:/Project/HabitTracker/app/src/main/res/layout/task_item_layout.xml" value="0.440625" />
       </map>
     </option>
   </component>
