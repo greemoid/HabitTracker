@@ -14,6 +14,7 @@
     <string name="color">Колір</string>
     <string name="type_your_name_of_task">Type your name of task</string>
     <string name="repeat">Повторення</string>
+    <string name="days_of_repeat">Дні повторення</string>
     <string name="do_do">Виконати…</string>
     <string name="target_for_the_day">Ціль на день</string>
     <string name="advanced_settings">Розширені налаштування</string>
@@ -22,4 +23,11 @@
     <string name="morning">Вранці</string>
     <string name="doesnt_matter">Не важливо</string>
     <string name="save">Зберегти</string>
+    <string name="sunday">Н</string>
+    <string name="saturday">С</string>
+    <string name="friday">П</string>
+    <string name="thursday">Ч</string>
+    <string name="wednesday">С</string>
+    <string name="tuesday">В</string>
+    <string name="monday">П</string>
 </resources>
