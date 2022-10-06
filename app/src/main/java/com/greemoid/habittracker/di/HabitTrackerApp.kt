@@ -1,4 +1,4 @@
-package com.greemoid.habittracker
+package com.greemoid.habittracker.di
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

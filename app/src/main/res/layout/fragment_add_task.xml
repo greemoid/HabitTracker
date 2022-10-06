@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -97,37 +96,25 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <LinearLayout
+
+                <TextView
                     android:id="@+id/btn_choose_icon"
-                    android:layout_width="@dimen/size_0dp"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_weight="0.8"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:padding="@dimen/size_8dp"
+                    android:text="@string/icon"
+                    android:textColor="@color/main_text"
+                    android:textSize="@dimen/text_18sp"
+                    android:textStyle="bold"
+                    app:drawableEndCompat="@drawable/ic_next"
                     app:layout_constraintBottom_toTopOf="@+id/view2"
-                    app:layout_constraintEnd_toEndOf="@id/view2"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toStartOf="@id/view2"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintEnd_toEndOf="@+id/view2"
+                    app:layout_constraintStart_toStartOf="@+id/view2"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical|start"
-                        android:layout_weight="0.8"
-                        android:text="@string/icon"
-                        android:textColor="@color/main_text"
-                        android:textSize="@dimen/text_18sp"
-                        android:textStyle="bold" />
-
-
-                    <ImageView
-                        android:layout_width="@dimen/size_32dp"
-                        android:layout_height="@dimen/size_32dp"
-                        android:layout_gravity="center_vertical|end"
-                        android:contentDescription="@string/see_icons"
-                        android:src="@drawable/ic_next" />
-
-
-                </LinearLayout>
 
                 <View
                     android:id="@+id/view2"
@@ -141,37 +128,24 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
 
-                <LinearLayout
+                <TextView
                     android:id="@+id/btn_choose_color"
-                    android:layout_width="@dimen/size_0dp"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_weight="0.8"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:padding="@dimen/size_8dp"
+                    android:text="@string/color"
+                    android:textColor="@color/main_text"
+                    android:textSize="@dimen/text_18sp"
+                    android:textStyle="bold"
+                    app:drawableEndCompat="@drawable/ic_next"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@id/view2"
-                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintEnd_toEndOf="@+id/view2"
                     app:layout_constraintStart_toStartOf="@+id/view2"
-                    app:layout_constraintTop_toBottomOf="@+id/view2">
+                    app:layout_constraintTop_toBottomOf="@+id/view2" />
 
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical|start"
-                        android:layout_weight="0.8"
-                        android:text="@string/color"
-                        android:textColor="@color/main_text"
-                        android:textSize="@dimen/text_18sp"
-                        android:textStyle="bold" />
-
-
-                    <ImageView
-                        android:layout_width="@dimen/size_32dp"
-                        android:layout_height="@dimen/size_32dp"
-                        android:layout_gravity="center_vertical|end"
-                        android:contentDescription="@string/see_icons"
-                        android:src="@drawable/ic_next" />
-
-
-                </LinearLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
@@ -189,7 +163,7 @@
 
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/btn_open_repeats"
+            android:id="@+id/card_view_repeats"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/size_8dp"
@@ -201,130 +175,128 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_repeats">
 
 
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView10"
+                    android:id="@+id/btn_open_repeats"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:drawableEndCompat="@drawable/ic_next"
                     android:layout_margin="@dimen/size_16dp"
+                    android:background="?android:attr/selectableItemBackground"
                     android:gravity="center_vertical"
+                    android:padding="@dimen/size_4dp"
                     android:text="@string/days_of_repeat"
                     android:textColor="@color/main_text"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    app:drawableEndCompat="@drawable/ic_next" />
 
                 <LinearLayout
                     android:id="@+id/linear_with_checkboxes"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:visibility="gone"
                     android:layout_marginBottom="@dimen/size_16dp"
-                    android:orientation="horizontal">
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
 
                     <CheckBox
                         android:id="@+id/cb_monday"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:button="@null"
-                        android:gravity="center"
-                        android:textColor="@color/main_text"
-                        android:textStyle="bold"
-                        android:checked="true"
                         android:layout_margin="@dimen/size_2dp"
                         android:background="@drawable/custom_checkbox"
-                        android:text="@string/monday"/>
+                        android:button="@null"
+                        android:checked="true"
+                        android:gravity="center"
+                        android:text="@string/monday"
+                        android:textColor="@color/main_text"
+                        android:textStyle="bold" />
 
                     <CheckBox
                         android:id="@+id/cb_tuesday"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:button="@null"
-                        android:gravity="center"
-                        android:checked="true"
-                        android:textColor="@color/main_text"
-                        android:textStyle="bold"
                         android:layout_margin="@dimen/size_2dp"
                         android:background="@drawable/custom_checkbox"
-                        android:text="@string/tuesday"/>
+                        android:button="@null"
+                        android:checked="true"
+                        android:gravity="center"
+                        android:text="@string/tuesday"
+                        android:textColor="@color/main_text"
+                        android:textStyle="bold" />
 
                     <CheckBox
                         android:id="@+id/cb_wednesday"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:button="@null"
-                        android:gravity="center"
-                        android:checked="true"
-                        android:textColor="@color/main_text"
-                        android:textStyle="bold"
                         android:layout_margin="@dimen/size_2dp"
                         android:background="@drawable/custom_checkbox"
-                        android:text="@string/wednesday"/>
+                        android:button="@null"
+                        android:checked="true"
+                        android:gravity="center"
+                        android:text="@string/wednesday"
+                        android:textColor="@color/main_text"
+                        android:textStyle="bold" />
 
                     <CheckBox
                         android:id="@+id/cb_thursday"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:button="@null"
-                        android:gravity="center"
-                        android:checked="true"
-                        android:textColor="@color/main_text"
-                        android:textStyle="bold"
                         android:layout_margin="@dimen/size_2dp"
                         android:background="@drawable/custom_checkbox"
-                        android:text="@string/thursday"/>
+                        android:button="@null"
+                        android:checked="true"
+                        android:gravity="center"
+                        android:text="@string/thursday"
+                        android:textColor="@color/main_text"
+                        android:textStyle="bold" />
 
                     <CheckBox
                         android:id="@+id/cb_friday"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:button="@null"
-                        android:gravity="center"
-                        android:checked="true"
-                        android:textColor="@color/main_text"
-                        android:textStyle="bold"
                         android:layout_margin="@dimen/size_2dp"
                         android:background="@drawable/custom_checkbox"
-                        android:text="@string/friday"/>
+                        android:button="@null"
+                        android:checked="true"
+                        android:gravity="center"
+                        android:text="@string/friday"
+                        android:textColor="@color/main_text"
+                        android:textStyle="bold" />
 
                     <CheckBox
                         android:id="@+id/cb_saturday"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:button="@null"
-                        android:gravity="center"
-                        android:checked="true"
-                        android:textColor="@color/main_text"
-                        android:textStyle="bold"
                         android:layout_margin="@dimen/size_2dp"
                         android:background="@drawable/custom_checkbox"
-                        android:text="@string/saturday"/>
+                        android:button="@null"
+                        android:checked="true"
+                        android:gravity="center"
+                        android:text="@string/saturday"
+                        android:textColor="@color/main_text"
+                        android:textStyle="bold" />
 
                     <CheckBox
                         android:id="@+id/cb_sunday"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:button="@null"
-                        android:gravity="center"
-                        android:checked="true"
-                        android:textColor="@color/main_text"
-                        android:textStyle="bold"
                         android:layout_margin="@dimen/size_2dp"
                         android:background="@drawable/custom_checkbox"
-                        android:text="@string/sunday"/>
+                        android:button="@null"
+                        android:checked="true"
+                        android:gravity="center"
+                        android:text="@string/sunday"
+                        android:textColor="@color/main_text"
+                        android:textStyle="bold" />
 
 
                 </LinearLayout>
 
             </LinearLayout>
-
-
-
 
 
         </androidx.cardview.widget.CardView>
@@ -338,13 +310,14 @@
             android:textColor="@color/secondary_text"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/tv_regular_habit"
-            app:layout_constraintTop_toBottomOf="@+id/btn_open_repeats" />
+            app:layout_constraintTop_toBottomOf="@+id/card_view_repeats" />
 
         <TextView
             android:id="@+id/btn_advanced_settings"
             android:layout_width="@dimen/size_0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/size_16dp"
+            android:background="?android:attr/selectableItemBackground"
             android:padding="@dimen/size_8dp"
             android:text="@string/advanced_settings"
             android:textColor="@color/main_text"
@@ -360,8 +333,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="@id/btn_open_repeats"
-            app:layout_constraintStart_toStartOf="@+id/btn_open_repeats"
+            app:layout_constraintEnd_toEndOf="@id/card_view_repeats"
+            app:layout_constraintStart_toStartOf="@+id/card_view_repeats"
             app:layout_constraintTop_toBottomOf="@id/tv_do">
 
             <LinearLayout
@@ -462,23 +435,24 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_8dp"
             android:layout_marginTop="@dimen/size_32dp"
+            android:layout_marginEnd="@dimen/size_8dp"
             android:background="@drawable/rounded_blue_button_bg"
             android:text="@string/save"
             android:textColor="@color/main_text"
             android:textStyle="bold"
             app:backgroundTint="@null"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/btn_advanced_settings"
+            app:layout_constraintStart_toStartOf="@+id/btn_advanced_settings"
             app:layout_constraintTop_toBottomOf="@id/btn_advanced_settings" />
 
         <LinearLayout
             android:id="@+id/linear_with_cards"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/size_0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/size_16dp"
             android:orientation="vertical"
-            android:visibility="gone"
             app:cardCornerRadius="@dimen/size_16dp"
             app:layout_constraintEnd_toEndOf="@+id/cardView2"
             app:layout_constraintStart_toStartOf="@+id/cardView2"
@@ -512,7 +486,8 @@
                             android:layout_margin="@dimen/size_8dp"
                             android:layout_weight="0.25"
                             android:background="@drawable/radio_blue"
-                            android:button="@android:color/transparent" />
+                            android:button="@android:color/transparent"
+                            android:checked="true" />
 
                         <RadioButton
                             android:id="@+id/cb_green"
@@ -620,7 +595,16 @@
                             android:layout_width="@dimen/size_32dp"
                             android:layout_height="@dimen/size_32dp"
                             android:layout_margin="@dimen/size_16dp"
-                            android:background="@drawable/ic_book"
+                            android:background="@drawable/radio_book"
+                            android:button="@android:color/transparent"
+                            android:checked="true" />
+
+                        <RadioButton
+                            android:id="@+id/cb_book1"
+                            android:layout_width="@dimen/size_32dp"
+                            android:layout_height="@dimen/size_32dp"
+                            android:layout_margin="@dimen/size_16dp"
+                            android:background="@drawable/radio_meditation"
                             android:button="@android:color/transparent" />
 
                         <RadioButton
@@ -628,7 +612,7 @@
                             android:layout_width="@dimen/size_32dp"
                             android:layout_height="@dimen/size_32dp"
                             android:layout_margin="@dimen/size_16dp"
-                            android:background="@drawable/ic_money"
+                            android:background="@drawable/radio_money"
                             android:button="@android:color/transparent" />
 
                         <RadioButton
@@ -636,7 +620,7 @@
                             android:layout_width="@dimen/size_32dp"
                             android:layout_height="@dimen/size_32dp"
                             android:layout_margin="@dimen/size_16dp"
-                            android:background="@drawable/ic_no_food"
+                            android:background="@drawable/radio_no_food"
                             android:button="@android:color/transparent" />
 
                         <RadioButton
@@ -644,7 +628,7 @@
                             android:layout_width="@dimen/size_32dp"
                             android:layout_height="@dimen/size_32dp"
                             android:layout_margin="@dimen/size_16dp"
-                            android:background="@drawable/ic_note"
+                            android:background="@drawable/radio_note"
                             android:button="@android:color/transparent" />
 
                     </LinearLayout>
@@ -661,7 +645,15 @@
                             android:layout_width="@dimen/size_32dp"
                             android:layout_height="@dimen/size_32dp"
                             android:layout_margin="@dimen/size_16dp"
-                            android:background="@drawable/ic_palette"
+                            android:background="@drawable/radio_palette"
+                            android:button="@android:color/transparent" />
+
+                        <RadioButton
+                            android:id="@+id/cb_laptop"
+                            android:layout_width="@dimen/size_32dp"
+                            android:layout_height="@dimen/size_32dp"
+                            android:layout_margin="@dimen/size_16dp"
+                            android:background="@drawable/radio_laptop"
                             android:button="@android:color/transparent" />
 
                         <RadioButton
@@ -669,7 +661,7 @@
                             android:layout_width="@dimen/size_32dp"
                             android:layout_height="@dimen/size_32dp"
                             android:layout_margin="@dimen/size_16dp"
-                            android:background="@drawable/ic_run"
+                            android:background="@drawable/radio_run"
                             android:button="@android:color/transparent" />
 
                         <RadioButton
@@ -677,7 +669,7 @@
                             android:layout_width="@dimen/size_32dp"
                             android:layout_height="@dimen/size_32dp"
                             android:layout_margin="@dimen/size_16dp"
-                            android:background="@drawable/ic_school"
+                            android:background="@drawable/radio_school"
                             android:button="@android:color/transparent" />
 
                         <RadioButton
@@ -685,7 +677,7 @@
                             android:layout_width="@dimen/size_32dp"
                             android:layout_height="@dimen/size_32dp"
                             android:layout_margin="@dimen/size_16dp"
-                            android:background="@drawable/ic_sport"
+                            android:background="@drawable/radio_sport"
                             android:button="@android:color/transparent" />
 
                     </LinearLayout>
