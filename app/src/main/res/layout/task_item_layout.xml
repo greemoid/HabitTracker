@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
 
     <CheckBox
@@ -20,19 +20,26 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/size_8dp"
         app:cardCornerRadius="@dimen/size_16dp"
-        app:cardBackgroundColor="@color/light_blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/checkBox"
         app:layout_constraintTop_toTopOf="parent">
 
+        <LinearLayout
+            android:id="@+id/lin_item"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
         <ImageView
+            android:id="@+id/iv_icon"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginStart="@dimen/size_16dp"
             android:layout_gravity="center_vertical"
-            android:src="@drawable/ic_baseline_event_note_24"/>
+            android:src="@drawable/ic_baseline_event_note_24"
+            android:contentDescription="@string/icon_of_habit" />
 
         <TextView
+            android:id="@+id/tv_habit_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/text_18sp"
@@ -41,6 +48,8 @@
             android:textColor="@color/main_text"
             tools:text="Ведите дневник"
             android:layout_gravity="center"/>
+
+        </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 

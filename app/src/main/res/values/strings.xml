@@ -31,4 +31,5 @@
     <string name="tuesday">В</string>
     <string name="monday">П</string>
     <string name="empty_rv">Here is empty...\nYou can add a new habit \nby pressing on button below</string>
+    <string name="icon_of_habit">Icon of habit</string>
 </resources>

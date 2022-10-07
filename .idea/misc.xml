@@ -65,9 +65,9 @@
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/sea_checked.xml" value="0.4425" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/sea_unchecked.xml" value="0.4425" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/layout/activity_main.xml" value="0.4" />
-        <entry key="..\:/Project/HabitTracker/app/src/main/res/layout/fragment_add_task.xml" value="0.483704974271012" />
+        <entry key="..\:/Project/HabitTracker/app/src/main/res/layout/fragment_add_task.xml" value="0.12260536398467432" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/layout/fragment_tasks_list.xml" value="0.42239583333333336" />
-        <entry key="..\:/Project/HabitTracker/app/src/main/res/layout/task_item_layout.xml" value="0.440625" />
+        <entry key="..\:/Project/HabitTracker/app/src/main/res/layout/task_item_layout.xml" value="0.1" />
       </map>
     </option>
   </component>

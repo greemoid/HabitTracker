@@ -172,21 +172,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/radioGroup_with_days" />
 
-        <TextView
-            android:id="@+id/tv_empty"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/empty_rv"
-            android:gravity="center"
-            android:padding="@dimen/size_64dp"
-            android:textColor="@color/secondary_text"
-            android:textSize="@dimen/text_18sp"
-            android:textStyle="italic"
-            android:visibility="invisible"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/view"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
@@ -194,9 +179,6 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/size_8dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:itemCount="4"
-            android:visibility="gone"
-            tools:listitem="@layout/task_item_layout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -209,7 +191,7 @@
             android:background="@color/secondary_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_empty" />
+            app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
 
         <Button
             android:id="@+id/btn_add"

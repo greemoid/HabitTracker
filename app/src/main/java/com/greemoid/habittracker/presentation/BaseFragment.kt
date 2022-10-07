@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.navigation.findNavController
 import androidx.viewbinding.ViewBinding
-import dagger.hilt.android.AndroidEntryPoint
 
 abstract class BaseFragment<VM : ViewModel, VB : ViewBinding>(
     private val inflateMethod: (LayoutInflater, ViewGroup?, Boolean) -> VB,
@@ -22,7 +21,7 @@ abstract class BaseFragment<VM : ViewModel, VB : ViewBinding>(
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         _binding = inflateMethod.invoke(inflater, container, false)
         return binding.root

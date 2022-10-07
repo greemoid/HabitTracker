@@ -326,10 +326,10 @@
             app:drawableEndCompat="@drawable/ic_next"
             app:layout_constraintEnd_toEndOf="@+id/cardView2"
             app:layout_constraintStart_toStartOf="@+id/cardView2"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+            app:layout_constraintTop_toBottomOf="@+id/radio_group_with_days" />
 
         <com.greemoid.habittracker.presentation.MultiRowsRadioGroup
-            android:id="@+id/radioGroup"
+            android:id="@+id/radio_group_with_days"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -433,6 +433,7 @@
         </com.greemoid.habittracker.presentation.MultiRowsRadioGroup>
 
         <Button
+            android:id="@+id/btn_save"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/size_8dp"
@@ -467,6 +468,7 @@
 
 
                 <com.greemoid.habittracker.presentation.MultiRowsRadioGroup
+                    android:id="@+id/radio_group_with_colors"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/background_for_other_views"
@@ -480,7 +482,7 @@
 
 
                         <RadioButton
-                            android:id="@+id/cb_blue"
+                            android:id="@+id/rb_blue"
                             android:layout_width="64dp"
                             android:layout_height="64dp"
                             android:layout_margin="@dimen/size_8dp"
@@ -490,7 +492,7 @@
                             android:checked="true" />
 
                         <RadioButton
-                            android:id="@+id/cb_green"
+                            android:id="@+id/rb_green"
                             android:layout_width="64dp"
                             android:layout_height="64dp"
                             android:layout_margin="@dimen/size_8dp"
@@ -499,7 +501,7 @@
                             android:button="@android:color/transparent" />
 
                         <RadioButton
-                            android:id="@+id/cb_light_orange"
+                            android:id="@+id/rb_light_orange"
                             android:layout_width="64dp"
                             android:layout_height="64dp"
                             android:layout_margin="@dimen/size_8dp"
@@ -508,7 +510,7 @@
                             android:button="@android:color/transparent" />
 
                         <RadioButton
-                            android:id="@+id/cb_pelorous"
+                            android:id="@+id/rb_pelorous"
                             android:layout_width="64dp"
                             android:layout_height="64dp"
                             android:layout_margin="@dimen/size_8dp"
@@ -525,7 +527,7 @@
 
 
                         <RadioButton
-                            android:id="@+id/cb_orange"
+                            android:id="@+id/rb_orange"
                             android:layout_width="64dp"
                             android:layout_height="64dp"
                             android:layout_margin="@dimen/size_8dp"
@@ -534,7 +536,7 @@
                             android:button="@android:color/transparent" />
 
                         <RadioButton
-                            android:id="@+id/cb_sea"
+                            android:id="@+id/rb_sea"
                             android:layout_width="64dp"
                             android:layout_height="64dp"
                             android:layout_margin="@dimen/size_8dp"
@@ -543,7 +545,7 @@
                             android:button="@android:color/transparent" />
 
                         <RadioButton
-                            android:id="@+id/cb_red"
+                            android:id="@+id/rb_red"
                             android:layout_width="64dp"
                             android:layout_height="64dp"
                             android:layout_margin="@dimen/size_8dp"
@@ -552,7 +554,7 @@
                             android:button="@android:color/transparent" />
 
                         <RadioButton
-                            android:id="@+id/cb_brown"
+                            android:id="@+id/rb_brown"
                             android:layout_width="64dp"
                             android:layout_height="64dp"
                             android:layout_margin="@dimen/size_8dp"
@@ -577,6 +579,7 @@
 
 
                 <com.greemoid.habittracker.presentation.MultiRowsRadioGroup
+                    android:id="@+id/radio_group_with_icons"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/background_for_other_views"
@@ -591,7 +594,7 @@
 
 
                         <RadioButton
-                            android:id="@+id/cb_book"
+                            android:id="@+id/rb_book"
                             android:layout_width="@dimen/size_32dp"
                             android:layout_height="@dimen/size_32dp"
                             android:layout_margin="@dimen/size_16dp"
@@ -600,7 +603,7 @@
                             android:checked="true" />
 
                         <RadioButton
-                            android:id="@+id/cb_book1"
+                            android:id="@+id/rb_meditation"
                             android:layout_width="@dimen/size_32dp"
                             android:layout_height="@dimen/size_32dp"
                             android:layout_margin="@dimen/size_16dp"
@@ -608,7 +611,7 @@
                             android:button="@android:color/transparent" />
 
                         <RadioButton
-                            android:id="@+id/cb_money"
+                            android:id="@+id/rb_money"
                             android:layout_width="@dimen/size_32dp"
                             android:layout_height="@dimen/size_32dp"
                             android:layout_margin="@dimen/size_16dp"
@@ -616,7 +619,7 @@
                             android:button="@android:color/transparent" />
 
                         <RadioButton
-                            android:id="@+id/cb_no_food"
+                            android:id="@+id/rb_no_food"
                             android:layout_width="@dimen/size_32dp"
                             android:layout_height="@dimen/size_32dp"
                             android:layout_margin="@dimen/size_16dp"
@@ -624,7 +627,7 @@
                             android:button="@android:color/transparent" />
 
                         <RadioButton
-                            android:id="@+id/cb_note"
+                            android:id="@+id/rb_note"
                             android:layout_width="@dimen/size_32dp"
                             android:layout_height="@dimen/size_32dp"
                             android:layout_margin="@dimen/size_16dp"
@@ -641,7 +644,7 @@
 
 
                         <RadioButton
-                            android:id="@+id/cb_palette"
+                            android:id="@+id/rb_palette"
                             android:layout_width="@dimen/size_32dp"
                             android:layout_height="@dimen/size_32dp"
                             android:layout_margin="@dimen/size_16dp"
@@ -649,7 +652,7 @@
                             android:button="@android:color/transparent" />
 
                         <RadioButton
-                            android:id="@+id/cb_laptop"
+                            android:id="@+id/rb_laptop"
                             android:layout_width="@dimen/size_32dp"
                             android:layout_height="@dimen/size_32dp"
                             android:layout_margin="@dimen/size_16dp"
@@ -657,7 +660,7 @@
                             android:button="@android:color/transparent" />
 
                         <RadioButton
-                            android:id="@+id/cb_run"
+                            android:id="@+id/rb_run"
                             android:layout_width="@dimen/size_32dp"
                             android:layout_height="@dimen/size_32dp"
                             android:layout_margin="@dimen/size_16dp"
@@ -665,7 +668,7 @@
                             android:button="@android:color/transparent" />
 
                         <RadioButton
-                            android:id="@+id/cb_school"
+                            android:id="@+id/rb_school"
                             android:layout_width="@dimen/size_32dp"
                             android:layout_height="@dimen/size_32dp"
                             android:layout_margin="@dimen/size_16dp"
@@ -673,7 +676,7 @@
                             android:button="@android:color/transparent" />
 
                         <RadioButton
-                            android:id="@+id/cb_sport"
+                            android:id="@+id/rb_sport"
                             android:layout_width="@dimen/size_32dp"
                             android:layout_height="@dimen/size_32dp"
                             android:layout_margin="@dimen/size_16dp"
