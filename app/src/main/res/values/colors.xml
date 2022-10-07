@@ -16,12 +16,15 @@
     <color name="light_sea">#34afeb</color>
     <color name="orange">#ff7b4a</color>
     <color name="pelorous">#2ea8b7</color>
+    <color name="light_brown">#cca391</color>
 
     <!--colors for background and buttons-->
     <color name="back_background">#121317</color>
     <color name="main_background">#21242b</color>
+    <color name="background_for_other_views">#313747</color>
     <color name="radius_of_checkbox">#898b90 </color>
     <color name="button_color">#0a7dfe</color>
+    <color name="button_color_pressed">#4099FE</color>
     <color name="icons_color">#c2c3c7</color>
     <color name="main_text">#eeeff1</color>
     <color name="secondary_text">#8b8e93</color>

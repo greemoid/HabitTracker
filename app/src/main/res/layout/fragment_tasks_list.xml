@@ -20,6 +20,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!--todo change android:text on tools after adding date-->
     <TextView
         android:id="@+id/tv_date"
         android:layout_width="wrap_content"
@@ -28,7 +29,7 @@
         android:textSize="@dimen/text_16sp"
         app:layout_constraintStart_toStartOf="@+id/tv_today"
         app:layout_constraintTop_toBottomOf="@+id/tv_today"
-        tools:text="3 oct" />
+        android:text="3 oct" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fbtn_add"
@@ -45,6 +46,7 @@
         android:contentDescription="@string/desc_add" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/const_layout_with_habits"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@drawable/rounded_corners_bg"
@@ -54,23 +56,129 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_date">
 
+
+            <RadioGroup
+                android:id="@+id/radioGroup_with_days"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/size_8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/const_layout_with_habits">
+
+
+
+
+            <RadioButton
+                android:id="@+id/cb_monday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:gravity="center"
+                android:textColor="@color/main_text"
+                android:textStyle="bold"
+                android:checked="true"
+                android:layout_margin="@dimen/size_2dp"
+                android:background="@drawable/custom_checkbox"
+                android:text="@string/monday"/>
+
+            <RadioButton
+                android:id="@+id/cb_tuesday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:gravity="center"
+                android:textColor="@color/main_text"
+                android:textStyle="bold"
+                android:layout_margin="@dimen/size_2dp"
+                android:background="@drawable/custom_checkbox"
+                android:text="@string/tuesday"/>
+
+            <RadioButton
+                android:id="@+id/cb_wednesday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:gravity="center"
+                android:textColor="@color/main_text"
+                android:textStyle="bold"
+                android:layout_margin="@dimen/size_2dp"
+                android:background="@drawable/custom_checkbox"
+                android:text="@string/wednesday"/>
+
+            <RadioButton
+                android:id="@+id/cb_thursday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:gravity="center"
+                android:textColor="@color/main_text"
+                android:textStyle="bold"
+                android:layout_margin="@dimen/size_2dp"
+                android:background="@drawable/custom_checkbox"
+                android:text="@string/thursday"/>
+
+            <RadioButton
+                android:id="@+id/cb_friday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:gravity="center"
+                android:textColor="@color/main_text"
+                android:textStyle="bold"
+                android:layout_margin="@dimen/size_2dp"
+                android:background="@drawable/custom_checkbox"
+                android:text="@string/friday"/>
+
+            <RadioButton
+                android:id="@+id/cb_saturday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:gravity="center"
+                android:textColor="@color/main_text"
+                android:textStyle="bold"
+                android:layout_margin="@dimen/size_2dp"
+                android:background="@drawable/custom_checkbox"
+                android:text="@string/saturday"/>
+
+            <RadioButton
+                android:id="@+id/cb_sunday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:gravity="center"
+                android:textColor="@color/main_text"
+                android:textStyle="bold"
+                android:layout_margin="@dimen/size_2dp"
+                android:background="@drawable/custom_checkbox"
+                android:text="@string/sunday"/>
+
+            </RadioGroup>
+
+
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/size_8dp"
+            android:layout_marginStart="@dimen/size_16dp"
+            android:layout_marginTop="@dimen/size_4dp"
             android:text="@string/your_habits_for_today"
             android:textColor="@color/main_text"
             android:textSize="@dimen/text_18sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup_with_days" />
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/size_8dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -79,13 +187,14 @@
             android:id="@+id/view"
             android:layout_width="match_parent"
             android:layout_height="@dimen/size_1dp"
-            android:layout_margin="@dimen/size_8dp"
+            android:layout_margin="@dimen/size_16dp"
             android:background="@color/secondary_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
 
         <Button
+            android:id="@+id/btn_add"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/size_32dp"

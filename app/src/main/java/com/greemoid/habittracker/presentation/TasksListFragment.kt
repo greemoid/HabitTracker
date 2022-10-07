@@ -1,21 +1,26 @@
 package com.greemoid.habittracker.presentation
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import com.greemoid.habittracker.R
+import com.greemoid.habittracker.databinding.FragmentTasksListBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
+class TasksListFragment :
+    BaseFragment<TasksListViewModel, FragmentTasksListBinding>(FragmentTasksListBinding::inflate) {
+    override val viewModel: TasksListViewModel by viewModels()
 
-class TasksListFragment : Fragment() {
+    override fun init() {
+        binding.fbtnAdd.navigate(R.id.action_tasksListFragment_to_addTaskFragment)
+        binding.btnAdd.navigate(R.id.action_tasksListFragment_to_addTaskFragment)
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tasks_list, container, false)
+        viewModel.getAllHabits()
+        val adapter = TasksListAdapter()
+        binding.recyclerView.adapter = adapter
+        viewModel.liveData.observe(this) { list ->
+            adapter.differ.submitList(list.asReversed())
+        }
     }
+
 
 }
