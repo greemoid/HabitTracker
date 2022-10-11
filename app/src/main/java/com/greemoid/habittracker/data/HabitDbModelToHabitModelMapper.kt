@@ -8,6 +8,7 @@ class HabitDbModelToHabitModelMapper : ListMapper<List<HabitDbModel>, List<Habit
         val list = mutableListOf<HabitModel>()
         input.forEach {
             list.add(HabitModel(
+                it.id,
                 it.title,
                 it.icon,
                 it.color,

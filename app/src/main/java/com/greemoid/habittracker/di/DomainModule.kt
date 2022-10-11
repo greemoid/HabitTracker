@@ -2,6 +2,7 @@ package com.greemoid.habittracker.di
 
 import com.greemoid.habittracker.domain.HabitRepository
 import com.greemoid.habittracker.domain.usecases.AddHabitUseCase
+import com.greemoid.habittracker.domain.usecases.DeleteHabitUseCase
 import com.greemoid.habittracker.domain.usecases.GetAllHabitsUseCase
 import dagger.Module
 import dagger.Provides
@@ -19,4 +20,8 @@ class DomainModule {
     @Provides
     fun provideGetAllHabitsUseCase(repository: HabitRepository) =
         GetAllHabitsUseCase(repository)
+
+    @Provides
+    fun provideDeleteHabitUseCase(repository: HabitRepository) =
+        DeleteHabitUseCase(repository)
 }

@@ -4,5 +4,5 @@ interface HabitRepository {
     fun getAllHabits(): List<HabitModel>
     suspend fun addHabit(habit: HabitModel)
     suspend fun updateHabit(habit: HabitModel)
-    suspend fun deleteHabit(habit: HabitModel)
+    suspend fun deleteHabit(id: Int, habit: HabitModel)
 }

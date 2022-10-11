@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/addTaskFragment"
-        android:name="com.greemoid.habittracker.presentation.AddTaskFragment"
+        android:name="com.greemoid.habittracker.presentation.add.AddTaskFragment"
         android:label="fragment_add_task"
         tools:layout="@layout/fragment_add_task" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/taskFragment"
-        android:name="com.greemoid.habittracker.presentation.TaskFragment"
+        android:name="com.greemoid.habittracker.presentation.task.TaskFragment"
         android:label="fragment_task"
         tools:layout="@layout/fragment_task" >
         <action
@@ -28,10 +28,13 @@
         <action
             android:id="@+id/action_taskFragment_to_addTaskFragment"
             app:destination="@id/addTaskFragment" />
+        <argument
+            android:name="habit"
+            app:argType="com.greemoid.habittracker.domain.HabitModel" />
     </fragment>
     <fragment
         android:id="@+id/tasksListFragment"
-        android:name="com.greemoid.habittracker.presentation.TasksListFragment"
+        android:name="com.greemoid.habittracker.presentation.list.TasksListFragment"
         android:label="fragment_tasks_list"
         tools:layout="@layout/fragment_tasks_list" >
         <action

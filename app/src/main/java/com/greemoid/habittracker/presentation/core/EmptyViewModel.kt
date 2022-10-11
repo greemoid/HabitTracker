@@ -1,4 +1,4 @@
-package com.greemoid.habittracker.presentation
+package com.greemoid.habittracker.presentation.core
 
 import androidx.lifecycle.ViewModel
 
