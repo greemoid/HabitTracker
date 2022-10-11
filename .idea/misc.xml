@@ -11,9 +11,12 @@
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/edit_text_background.xml" value="0.4425" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/green_checked.xml" value="0.4425" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/green_unchecked.xml" value="0.4425" />
+        <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/ic_alarm.xml" value="0.4425" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/ic_baseline_nights_stay_24.xml" value="0.4425" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/ic_book_checked.xml" value="0.4425" />
+        <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/ic_close.xml" value="0.4425" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/ic_day.xml" value="0.4425" />
+        <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/ic_delete.xml" value="0.4425" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/ic_down.xml" value="0.4425" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/ic_laptop_checked.xml" value="0.4425" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/ic_meditation_checked.xml" value="0.4425" />
@@ -24,6 +27,7 @@
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/ic_note_checked.xml" value="0.4425" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/ic_palette_checked.xml" value="0.4425" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/ic_pen.xml" value="0.4425" />
+        <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/ic_pen_another.xml" value="0.4425" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/ic_run_checked.xml" value="0.4425" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/ic_school_checked.xml" value="0.4425" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/ic_sport_checked.xml" value="0.4425" />
@@ -62,10 +66,14 @@
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/rounded_blue_button_bg.xml" value="0.4425" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/rounded_button_bg.xml" value="0.4425" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/rounded_corners_bg.xml" value="0.4425" />
+        <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/rounded_corners_blue_bg.xml" value="0.4425" />
+        <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/rounded_corners_for_tv_bg.xml" value="0.4425" />
+        <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/rounded_corners_red_bg.xml" value="0.4425" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/sea_checked.xml" value="0.4425" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/sea_unchecked.xml" value="0.4425" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/layout/activity_main.xml" value="0.4" />
-        <entry key="..\:/Project/HabitTracker/app/src/main/res/layout/fragment_add_task.xml" value="0.12260536398467432" />
+        <entry key="..\:/Project/HabitTracker/app/src/main/res/layout/fragment_add_task.xml" value="0.4" />
+        <entry key="..\:/Project/HabitTracker/app/src/main/res/layout/fragment_task.xml" value="0.440625" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/layout/fragment_tasks_list.xml" value="0.42239583333333336" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/layout/task_item_layout.xml" value="0.1" />
       </map>

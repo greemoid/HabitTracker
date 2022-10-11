@@ -1,14 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.TaskFragment">
+    android:background="@color/main_background"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.task.TaskFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <ImageButton
+        android:id="@+id/btn_go_back"
+        android:layout_width="@dimen/size_32dp"
+        android:layout_height="@dimen/size_32dp"
+        android:layout_margin="@dimen/size_8dp"
+        android:background="@null"
+        android:contentDescription="@string/close"
+        android:src="@drawable/ic_close"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_delete"
+        android:layout_width="@dimen/size_32dp"
+        android:layout_height="@dimen/size_32dp"
+        android:layout_margin="@dimen/size_8dp"
+        android:background="@null"
+        android:contentDescription="@string/close"
+        android:src="@drawable/ic_delete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_edit"
+        android:layout_width="@dimen/size_32dp"
+        android:layout_height="@dimen/size_32dp"
+        android:layout_margin="@dimen/size_8dp"
+        android:background="@null"
+        android:contentDescription="@string/close"
+        android:src="@drawable/ic_pen_another"
+        app:layout_constraintEnd_toStartOf="@id/btn_delete"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/tv_name_of_the_habit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Name of the habit"
+        android:layout_margin="@dimen/size_8dp"
+        android:textColor="@color/main_text"
+        android:textSize="@dimen/text_18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/btn_go_back"
+        app:layout_constraintTop_toBottomOf="@+id/btn_go_back" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/tv_part_of_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corners_for_tv_bg"
+        android:padding="6dp"
+        android:text="НЕВАЖЛИВО"
+        android:layout_marginTop="@dimen/size_4dp"
+        android:textSize="11sp"
+        android:textColor="@color/main_text"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tv_name_of_the_habit"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name_of_the_habit" />
+
+    <TextView
+        android:id="@+id/tv_days"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/size_4dp"
+        android:background="@drawable/rounded_corners_for_tv_bg"
+        android:padding="6dp"
+        android:text="КОЖЕН ДЕНЬ"
+        android:textColor="@color/main_text"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/tv_part_of_day"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name_of_the_habit" />
+
+    <TextView
+        android:id="@+id/tv_notification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/size_4dp"
+        android:background="@drawable/rounded_corners_for_tv_bg"
+        android:padding="6dp"
+        app:drawableStartCompat="@drawable/ic_alarm"
+        android:text="11:00"
+        android:gravity="center_vertical"
+        android:textColor="@color/main_text"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/tv_days"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name_of_the_habit" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/const_streak"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@drawable/rounded_corners_blue_bg"
+        android:layout_marginTop="@dimen/size_8dp"
+        app:layout_constraintStart_toStartOf="@+id/tv_name_of_the_habit"
+        app:layout_constraintTop_toBottomOf="@+id/tv_part_of_day">
+
+        <TextView
+            android:id="@+id/tv_cover_streak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/size_8dp"
+            android:gravity="center_vertical"
+            android:text="Текуча \nсерія"
+            android:textColor="@color/main_text"
+            android:textSize="@dimen/text_16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_streak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginTop="@dimen/size_8dp"
+            android:text="0"
+            android:textColor="@color/main_text"
+            android:textSize="@dimen/text_24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tv_cover_streak"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cover_streak" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cont_total"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:background="@drawable/rounded_corners_red_bg"
+            android:layout_marginStart="@dimen/size_8dp"
+            app:layout_constraintStart_toEndOf="@+id/const_streak"
+            app:layout_constraintTop_toTopOf="@+id/const_streak">
+
+            <TextView
+                android:id="@+id/tv_cover_total_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/size_8dp"
+                android:gravity="center_vertical"
+                android:text="Звичка \nзавершена"
+                android:textColor="@color/main_text"
+                android:textSize="@dimen/text_16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_total_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginTop="@dimen/size_8dp"
+                android:text="0"
+                android:textColor="@color/main_text"
+                android:textSize="@dimen/text_24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/tv_cover_total_number"
+                app:layout_constraintTop_toBottomOf="@+id/tv_cover_total_number" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

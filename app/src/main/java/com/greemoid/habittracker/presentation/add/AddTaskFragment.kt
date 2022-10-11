@@ -1,4 +1,4 @@
-package com.greemoid.habittracker.presentation
+package com.greemoid.habittracker.presentation.add
 
 import android.view.View
 import android.widget.Toast
@@ -8,6 +8,10 @@ import androidx.navigation.fragment.findNavController
 import com.greemoid.habittracker.R
 import com.greemoid.habittracker.databinding.FragmentAddTaskBinding
 import com.greemoid.habittracker.domain.HabitModel
+import com.greemoid.habittracker.presentation.core.BaseFragment
+import com.greemoid.habittracker.presentation.core.enums.Colors
+import com.greemoid.habittracker.presentation.core.enums.Icons
+import com.greemoid.habittracker.presentation.core.enums.PartOfDay
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -84,6 +88,7 @@ class AddTaskFragment :
                     || doOnFriday || doOnSaturday || doOnSunday
 
             val habit = HabitModel(
+                id = 0,
                 title = title,
                 icon = icon,
                 color = color,

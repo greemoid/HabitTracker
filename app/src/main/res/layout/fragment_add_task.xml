@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main_background"
-    tools:context=".presentation.AddTaskFragment">
+    tools:context=".presentation.add.AddTaskFragment">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -328,7 +328,7 @@
             app:layout_constraintStart_toStartOf="@+id/cardView2"
             app:layout_constraintTop_toBottomOf="@+id/radio_group_with_days" />
 
-        <com.greemoid.habittracker.presentation.MultiRowsRadioGroup
+        <com.greemoid.habittracker.presentation.core.MultiRowsRadioGroup
             android:id="@+id/radio_group_with_days"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -430,7 +430,7 @@
                     app:layout_constraintStart_toEndOf="@+id/rb_day"
                     app:layout_constraintTop_toBottomOf="@+id/rb_morning" />
             </LinearLayout>
-        </com.greemoid.habittracker.presentation.MultiRowsRadioGroup>
+        </com.greemoid.habittracker.presentation.core.MultiRowsRadioGroup>
 
         <Button
             android:id="@+id/btn_save"
@@ -467,7 +467,7 @@
                 app:cardCornerRadius="@dimen/size_16dp">
 
 
-                <com.greemoid.habittracker.presentation.MultiRowsRadioGroup
+                <com.greemoid.habittracker.presentation.core.MultiRowsRadioGroup
                     android:id="@+id/radio_group_with_colors"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -565,7 +565,7 @@
                     </LinearLayout>
 
 
-                </com.greemoid.habittracker.presentation.MultiRowsRadioGroup>
+                </com.greemoid.habittracker.presentation.core.MultiRowsRadioGroup>
 
 
             </androidx.cardview.widget.CardView>
@@ -578,7 +578,7 @@
                 app:cardCornerRadius="@dimen/size_16dp">
 
 
-                <com.greemoid.habittracker.presentation.MultiRowsRadioGroup
+                <com.greemoid.habittracker.presentation.core.MultiRowsRadioGroup
                     android:id="@+id/radio_group_with_icons"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -686,7 +686,7 @@
                     </LinearLayout>
 
 
-                </com.greemoid.habittracker.presentation.MultiRowsRadioGroup>
+                </com.greemoid.habittracker.presentation.core.MultiRowsRadioGroup>
 
 
             </androidx.cardview.widget.CardView>

@@ -1,4 +1,4 @@
-package com.greemoid.habittracker.presentation
+package com.greemoid.habittracker.presentation.list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.greemoid.habittracker.R
 import com.greemoid.habittracker.databinding.TaskItemLayoutBinding
 import com.greemoid.habittracker.domain.HabitModel
+import com.greemoid.habittracker.presentation.core.enums.Colors
+import com.greemoid.habittracker.presentation.core.enums.Icons
 
 class TasksListAdapter : RecyclerView.Adapter<TasksListAdapter.TasksListViewHolder>() {
     class TasksListViewHolder(private val binding: TaskItemLayoutBinding) :
@@ -18,10 +20,10 @@ class TasksListAdapter : RecyclerView.Adapter<TasksListAdapter.TasksListViewHold
                     Colors.BLUE.toString() -> R.color.light_blue
                     Colors.GREEN.toString() -> R.color.light_green
                     Colors.LIGHT_ORANGE.toString() -> R.color.light_orange
-                    Colors.PELOROUS.toString() -> R.color.red
+                    Colors.PELOROUS.toString() -> R.color.pelorous
                     Colors.ORANGE.toString() -> R.color.light_sea
                     Colors.SEA.toString() -> R.color.orange
-                    Colors.RED.toString() -> R.color.pelorous
+                    Colors.RED.toString() -> R.color.red
                     Colors.BROWN.toString() -> R.color.light_brown
                     else -> R.color.light_blue
                 }
@@ -42,6 +44,10 @@ class TasksListAdapter : RecyclerView.Adapter<TasksListAdapter.TasksListViewHold
                 tvHabitTitle.text = habit.title
                 linItem.setBackgroundResource(color)
                 ivIcon.setImageResource(icon)
+
+                itemView.setOnClickListener {
+                    onItemClickListener?.let { it(habit) }
+                }
             }
         }
     }
@@ -69,5 +75,12 @@ class TasksListAdapter : RecyclerView.Adapter<TasksListAdapter.TasksListViewHold
         }
     }
 
+    fun setOnItemClickListener(listener: (HabitModel) -> Unit) {
+        onItemClickListener = listener
+    }
+
     val differ = AsyncListDiffer(this, differCallback)
 }
+
+
+var onItemClickListener: ((HabitModel) -> Unit)? = null

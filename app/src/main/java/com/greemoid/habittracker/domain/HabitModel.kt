@@ -2,8 +2,10 @@ package com.greemoid.habittracker.domain
 
 import com.greemoid.habittracker.data.Mapper
 import com.greemoid.habittracker.data.cache.HabitDbModel
+import java.io.Serializable
 
 data class HabitModel(
+    val id: Int,
     val title: String,
     val icon: String,
     val color: String,
@@ -18,9 +20,10 @@ data class HabitModel(
     val doOnSaturday: Boolean,
     val doOnSunday: Boolean,
     val partOfDay: String,
-) : Mapper<HabitDbModel> {
+) : Mapper<HabitDbModel>, Serializable {
     override fun map(): HabitDbModel =
         HabitDbModel(
+            id = id,
             title = title,
             icon = icon,
             color = color,
