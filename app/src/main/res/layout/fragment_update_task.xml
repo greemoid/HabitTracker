@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.update.UpdateTaskFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageButton
+            android:id="@+id/btn_exit"
+            android:layout_width="@dimen/size_32dp"
+            android:layout_height="@dimen/size_32dp"
+            android:layout_margin="@dimen/size_8dp"
+            android:background="@null"
+            android:contentDescription="@string/close"
+            android:src="@drawable/ic_close"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etTitle"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_16dp"
+            android:background="@drawable/edit_text_background"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="@string/type_name_of_task"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:maxLines="1"
+            android:padding="@dimen/size_8dp"
+            android:paddingStart="@dimen/size_0dp"
+            android:paddingEnd="@dimen/size_0dp"
+            android:textColor="@color/main_text"
+            android:textColorHint="@color/secondary_text"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/ivPen"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_exit" />
+
+        <ImageView
+            android:id="@+id/ivPen"
+            android:layout_width="@dimen/size_24dp"
+            android:layout_height="@dimen/size_24dp"
+            android:layout_marginEnd="@dimen/size_8dp"
+            android:contentDescription="@string/type_your_name_of_task"
+            android:src="@drawable/ic_pen"
+            app:layout_constraintBottom_toBottomOf="@+id/etTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/etTitle" />
+
+        <TextView
+            android:id="@+id/tv_regular_habit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_4dp"
+            android:text="@string/regular_habit"
+            android:textColor="@color/secondary_text"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/etTitle"
+            app:layout_constraintTop_toBottomOf="@+id/etTitle" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView2"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="@dimen/size_8dp"
+            app:cardBackgroundColor="@color/background_for_other_views"
+            app:cardCornerRadius="@dimen/size_16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_regular_habit">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_icon_of_task"
+                    android:layout_width="@dimen/size_32dp"
+                    android:layout_height="@dimen/size_32dp"
+                    android:layout_margin="@dimen/size_32dp"
+                    android:contentDescription="@string/icon"
+                    android:src="@drawable/ic_pen"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/view2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/btn_choose_icon"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_weight="0.8"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:padding="@dimen/size_8dp"
+                    android:text="@string/icon"
+                    android:textColor="@color/main_text"
+                    android:textSize="@dimen/text_18sp"
+                    android:textStyle="bold"
+                    app:drawableEndCompat="@drawable/ic_next"
+                    app:layout_constraintBottom_toTopOf="@+id/view2"
+                    app:layout_constraintEnd_toEndOf="@+id/view2"
+                    app:layout_constraintStart_toStartOf="@+id/view2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="@dimen/size_0dp"
+                    android:layout_height="@dimen/size_1dp"
+                    android:layout_marginEnd="@dimen/size_8dp"
+                    android:background="@color/secondary_text"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/iv_icon_of_task"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/btn_choose_color"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_weight="0.8"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:padding="@dimen/size_8dp"
+                    android:text="@string/color"
+                    android:textColor="@color/main_text"
+                    android:textSize="@dimen/text_18sp"
+                    android:textStyle="bold"
+                    app:drawableEndCompat="@drawable/ic_next"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/view2"
+                    app:layout_constraintStart_toStartOf="@+id/view2"
+                    app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tv_repeats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_8dp"
+            android:text="@string/repeat"
+            android:textColor="@color/secondary_text"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tv_regular_habit"
+            app:layout_constraintTop_toBottomOf="@+id/linear_with_cards" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_repeats"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_8dp"
+            android:orientation="vertical"
+            app:cardBackgroundColor="@color/background_for_other_views"
+            app:cardCornerRadius="@dimen/size_16dp"
+            app:layout_constraintEnd_toEndOf="@+id/cardView2"
+            app:layout_constraintStart_toStartOf="@+id/cardView2"
+            app:layout_constraintTop_toBottomOf="@+id/tv_repeats">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/btn_open_repeats"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/size_16dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/size_4dp"
+                    android:text="@string/days_of_repeat"
+                    android:textColor="@color/main_text"
+                    android:textStyle="bold"
+                    app:drawableEndCompat="@drawable/ic_next" />
+
+                <LinearLayout
+                    android:id="@+id/linear_with_checkboxes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/size_16dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <CheckBox
+                        android:id="@+id/cb_monday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/size_2dp"
+                        android:background="@drawable/custom_checkbox"
+                        android:button="@null"
+                        android:checked="true"
+                        android:gravity="center"
+                        android:text="@string/monday"
+                        android:textColor="@color/main_text"
+                        android:textStyle="bold" />
+
+                    <CheckBox
+                        android:id="@+id/cb_tuesday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/size_2dp"
+                        android:background="@drawable/custom_checkbox"
+                        android:button="@null"
+                        android:checked="true"
+                        android:gravity="center"
+                        android:text="@string/tuesday"
+                        android:textColor="@color/main_text"
+                        android:textStyle="bold" />
+
+                    <CheckBox
+                        android:id="@+id/cb_wednesday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/size_2dp"
+                        android:background="@drawable/custom_checkbox"
+                        android:button="@null"
+                        android:checked="true"
+                        android:gravity="center"
+                        android:text="@string/wednesday"
+                        android:textColor="@color/main_text"
+                        android:textStyle="bold" />
+
+                    <CheckBox
+                        android:id="@+id/cb_thursday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/size_2dp"
+                        android:background="@drawable/custom_checkbox"
+                        android:button="@null"
+                        android:checked="true"
+                        android:gravity="center"
+                        android:text="@string/thursday"
+                        android:textColor="@color/main_text"
+                        android:textStyle="bold" />
+
+                    <CheckBox
+                        android:id="@+id/cb_friday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/size_2dp"
+                        android:background="@drawable/custom_checkbox"
+                        android:button="@null"
+                        android:checked="true"
+                        android:gravity="center"
+                        android:text="@string/friday"
+                        android:textColor="@color/main_text"
+                        android:textStyle="bold" />
+
+                    <CheckBox
+                        android:id="@+id/cb_saturday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/size_2dp"
+                        android:background="@drawable/custom_checkbox"
+                        android:button="@null"
+                        android:checked="true"
+                        android:gravity="center"
+                        android:text="@string/saturday"
+                        android:textColor="@color/main_text"
+                        android:textStyle="bold" />
+
+                    <CheckBox
+                        android:id="@+id/cb_sunday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/size_2dp"
+                        android:background="@drawable/custom_checkbox"
+                        android:button="@null"
+                        android:checked="true"
+                        android:gravity="center"
+                        android:text="@string/sunday"
+                        android:textColor="@color/main_text"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tv_do"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_8dp"
+            android:text="@string/do_do"
+            android:textColor="@color/secondary_text"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tv_regular_habit"
+            app:layout_constraintTop_toBottomOf="@+id/card_view_repeats" />
+
+        <TextView
+            android:id="@+id/btn_advanced_settings"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_16dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="@dimen/size_8dp"
+            android:text="@string/advanced_settings"
+            android:textColor="@color/main_text"
+            android:textSize="@dimen/text_18sp"
+            android:textStyle="bold"
+            app:drawableEndCompat="@drawable/ic_next"
+            app:layout_constraintEnd_toEndOf="@+id/cardView2"
+            app:layout_constraintStart_toStartOf="@+id/cardView2"
+            app:layout_constraintTop_toBottomOf="@+id/radio_group_with_days" />
+
+        <com.greemoid.habittracker.presentation.core.MultiRowsRadioGroup
+            android:id="@+id/radio_group_with_days"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="@id/card_view_repeats"
+            app:layout_constraintStart_toStartOf="@+id/card_view_repeats"
+            app:layout_constraintTop_toBottomOf="@id/tv_do">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_doesnt_matter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_8dp"
+                    android:layout_marginTop="@dimen/size_8dp"
+                    android:layout_marginEnd="@dimen/size_8dp"
+                    android:layout_marginBottom="@dimen/size_8dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/radio_part_of_the_day"
+                    android:button="@android:color/transparent"
+                    android:checked="true"
+                    android:gravity="center"
+                    android:padding="@dimen/size_16dp"
+                    android:text="@string/doesnt_matter"
+                    android:textColor="@color/main_text"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/rb_morning"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <RadioButton
+                    android:id="@+id/rb_morning"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_8dp"
+                    android:layout_marginTop="@dimen/size_8dp"
+                    android:layout_marginEnd="@dimen/size_8dp"
+                    android:layout_marginBottom="@dimen/size_8dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/radio_part_of_the_day"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:padding="@dimen/size_16dp"
+                    android:text="@string/morning"
+                    android:textColor="@color/main_text"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/rb_doesnt_matter"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_day"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_8dp"
+                    android:layout_marginTop="@dimen/size_8dp"
+                    android:layout_marginEnd="@dimen/size_8dp"
+                    android:layout_marginBottom="@dimen/size_8dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/radio_part_of_the_day"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:padding="@dimen/size_16dp"
+                    android:text="@string/day"
+                    android:textColor="@color/main_text"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/rb_evening"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rb_doesnt_matter" />
+
+                <RadioButton
+                    android:id="@+id/rb_evening"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_8dp"
+                    android:layout_marginTop="@dimen/size_8dp"
+                    android:layout_marginEnd="@dimen/size_8dp"
+                    android:layout_marginBottom="@dimen/size_8dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/radio_part_of_the_day"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:padding="@dimen/size_16dp"
+                    android:text="@string/evening"
+                    android:textColor="@color/main_text"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/rb_day"
+                    app:layout_constraintTop_toBottomOf="@+id/rb_morning" />
+            </LinearLayout>
+        </com.greemoid.habittracker.presentation.core.MultiRowsRadioGroup>
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_8dp"
+            android:layout_marginTop="@dimen/size_32dp"
+            android:layout_marginEnd="@dimen/size_8dp"
+            android:background="@drawable/rounded_blue_button_bg"
+            android:text="@string/save"
+            android:textColor="@color/main_text"
+            android:textStyle="bold"
+            app:backgroundTint="@null"
+            app:layout_constraintEnd_toEndOf="@+id/btn_advanced_settings"
+            app:layout_constraintStart_toStartOf="@+id/btn_advanced_settings"
+            app:layout_constraintTop_toBottomOf="@id/btn_advanced_settings" />
+
+        <LinearLayout
+            android:id="@+id/linear_with_cards"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_16dp"
+            android:orientation="vertical"
+            app:cardCornerRadius="@dimen/size_16dp"
+            app:layout_constraintEnd_toEndOf="@+id/cardView2"
+            app:layout_constraintStart_toStartOf="@+id/cardView2"
+            app:layout_constraintTop_toBottomOf="@+id/cardView2">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_with_colors"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:cardCornerRadius="@dimen/size_16dp">
+
+
+                <com.greemoid.habittracker.presentation.core.MultiRowsRadioGroup
+                    android:id="@+id/radio_group_with_colors"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/background_for_other_views"
+                    android:orientation="vertical"
+                    android:padding="@dimen/size_8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+
+                        <RadioButton
+                            android:id="@+id/rb_blue"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:layout_margin="@dimen/size_8dp"
+                            android:layout_weight="0.25"
+                            android:background="@drawable/radio_blue"
+                            android:button="@android:color/transparent"
+                            android:checked="true" />
+
+                        <RadioButton
+                            android:id="@+id/rb_green"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:layout_margin="@dimen/size_8dp"
+                            android:layout_weight="0.25"
+                            android:background="@drawable/radio_green"
+                            android:button="@android:color/transparent" />
+
+                        <RadioButton
+                            android:id="@+id/rb_light_orange"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:layout_margin="@dimen/size_8dp"
+                            android:layout_weight="0.25"
+                            android:background="@drawable/radio_light_orange"
+                            android:button="@android:color/transparent" />
+
+                        <RadioButton
+                            android:id="@+id/rb_pelorous"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:layout_margin="@dimen/size_8dp"
+                            android:layout_weight="0.25"
+                            android:background="@drawable/radio_pelorous"
+                            android:button="@android:color/transparent" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+
+                        <RadioButton
+                            android:id="@+id/rb_orange"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:layout_margin="@dimen/size_8dp"
+                            android:layout_weight="0.25"
+                            android:background="@drawable/radio_orange"
+                            android:button="@android:color/transparent" />
+
+                        <RadioButton
+                            android:id="@+id/rb_sea"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:layout_margin="@dimen/size_8dp"
+                            android:layout_weight="0.25"
+                            android:background="@drawable/radio_sea"
+                            android:button="@android:color/transparent" />
+
+                        <RadioButton
+                            android:id="@+id/rb_red"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:layout_margin="@dimen/size_8dp"
+                            android:layout_weight="0.25"
+                            android:background="@drawable/radio_red"
+                            android:button="@android:color/transparent" />
+
+                        <RadioButton
+                            android:id="@+id/rb_brown"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:layout_margin="@dimen/size_8dp"
+                            android:layout_weight="0.25"
+                            android:background="@drawable/radio_light_brown"
+                            android:button="@android:color/transparent" />
+
+                    </LinearLayout>
+
+
+                </com.greemoid.habittracker.presentation.core.MultiRowsRadioGroup>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_with_icons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:cardCornerRadius="@dimen/size_16dp">
+
+
+                <com.greemoid.habittracker.presentation.core.MultiRowsRadioGroup
+                    android:id="@+id/radio_group_with_icons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/background_for_other_views"
+                    android:orientation="vertical"
+                    android:padding="@dimen/size_8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+
+                        <RadioButton
+                            android:id="@+id/rb_book"
+                            android:layout_width="@dimen/size_32dp"
+                            android:layout_height="@dimen/size_32dp"
+                            android:layout_margin="@dimen/size_16dp"
+                            android:background="@drawable/radio_book"
+                            android:button="@android:color/transparent"
+                            android:checked="true" />
+
+                        <RadioButton
+                            android:id="@+id/rb_meditation"
+                            android:layout_width="@dimen/size_32dp"
+                            android:layout_height="@dimen/size_32dp"
+                            android:layout_margin="@dimen/size_16dp"
+                            android:background="@drawable/radio_meditation"
+                            android:button="@android:color/transparent" />
+
+                        <RadioButton
+                            android:id="@+id/rb_money"
+                            android:layout_width="@dimen/size_32dp"
+                            android:layout_height="@dimen/size_32dp"
+                            android:layout_margin="@dimen/size_16dp"
+                            android:background="@drawable/radio_money"
+                            android:button="@android:color/transparent" />
+
+                        <RadioButton
+                            android:id="@+id/rb_no_food"
+                            android:layout_width="@dimen/size_32dp"
+                            android:layout_height="@dimen/size_32dp"
+                            android:layout_margin="@dimen/size_16dp"
+                            android:background="@drawable/radio_no_food"
+                            android:button="@android:color/transparent" />
+
+                        <RadioButton
+                            android:id="@+id/rb_note"
+                            android:layout_width="@dimen/size_32dp"
+                            android:layout_height="@dimen/size_32dp"
+                            android:layout_margin="@dimen/size_16dp"
+                            android:background="@drawable/radio_note"
+                            android:button="@android:color/transparent" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+
+                        <RadioButton
+                            android:id="@+id/rb_palette"
+                            android:layout_width="@dimen/size_32dp"
+                            android:layout_height="@dimen/size_32dp"
+                            android:layout_margin="@dimen/size_16dp"
+                            android:background="@drawable/radio_palette"
+                            android:button="@android:color/transparent" />
+
+                        <RadioButton
+                            android:id="@+id/rb_laptop"
+                            android:layout_width="@dimen/size_32dp"
+                            android:layout_height="@dimen/size_32dp"
+                            android:layout_margin="@dimen/size_16dp"
+                            android:background="@drawable/radio_laptop"
+                            android:button="@android:color/transparent" />
+
+                        <RadioButton
+                            android:id="@+id/rb_run"
+                            android:layout_width="@dimen/size_32dp"
+                            android:layout_height="@dimen/size_32dp"
+                            android:layout_margin="@dimen/size_16dp"
+                            android:background="@drawable/radio_run"
+                            android:button="@android:color/transparent" />
+
+                        <RadioButton
+                            android:id="@+id/rb_school"
+                            android:layout_width="@dimen/size_32dp"
+                            android:layout_height="@dimen/size_32dp"
+                            android:layout_margin="@dimen/size_16dp"
+                            android:background="@drawable/radio_school"
+                            android:button="@android:color/transparent" />
+
+                        <RadioButton
+                            android:id="@+id/rb_sport"
+                            android:layout_width="@dimen/size_32dp"
+                            android:layout_height="@dimen/size_32dp"
+                            android:layout_margin="@dimen/size_16dp"
+                            android:background="@drawable/radio_sport"
+                            android:button="@android:color/transparent" />
+
+                    </LinearLayout>
+
+
+                </com.greemoid.habittracker.presentation.core.MultiRowsRadioGroup>
+
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,6 @@
 package com.greemoid.habittracker.presentation.task
 
+import android.os.Bundle
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -21,6 +22,11 @@ class TaskFragment :
         binding.btnDelete.setOnClickListener {
             viewModel.deleteHabit(args.habit)
             findNavController().navigate(R.id.action_taskFragment_to_tasksListFragment)
+        }
+        binding.btnEdit.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putSerializable("habit", args.habit)
+            findNavController().navigate(R.id.action_taskFragment_to_updateTaskFragment, bundle)
         }
     }
 

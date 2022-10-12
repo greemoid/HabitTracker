@@ -10,19 +10,25 @@ import com.greemoid.habittracker.databinding.TaskItemLayoutBinding
 import com.greemoid.habittracker.domain.HabitModel
 import com.greemoid.habittracker.presentation.core.enums.Colors
 import com.greemoid.habittracker.presentation.core.enums.Icons
+import com.greemoid.habittracker.presentation.update.UpdateViewModel
+import javax.inject.Inject
 
-class TasksListAdapter : RecyclerView.Adapter<TasksListAdapter.TasksListViewHolder>() {
-    class TasksListViewHolder(private val binding: TaskItemLayoutBinding) :
+class TasksListAdapter @Inject constructor(val updateViewModel: UpdateViewModel, val viewModel: TasksListViewModel) :
+    RecyclerView.Adapter<TasksListAdapter.TasksListViewHolder>() {
+
+    inner class TasksListViewHolder(private val binding: TaskItemLayoutBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(habit: HabitModel) {
             with(binding) {
+                checkBox.isChecked = habit.isDone
+
                 val color: Int = when (habit.color) {
                     Colors.BLUE.toString() -> R.color.light_blue
                     Colors.GREEN.toString() -> R.color.light_green
                     Colors.LIGHT_ORANGE.toString() -> R.color.light_orange
                     Colors.PELOROUS.toString() -> R.color.pelorous
-                    Colors.ORANGE.toString() -> R.color.light_sea
-                    Colors.SEA.toString() -> R.color.orange
+                    Colors.ORANGE.toString() -> R.color.orange
+                    Colors.SEA.toString() -> R.color.light_sea
                     Colors.RED.toString() -> R.color.red
                     Colors.BROWN.toString() -> R.color.light_brown
                     else -> R.color.light_blue
@@ -42,8 +48,33 @@ class TasksListAdapter : RecyclerView.Adapter<TasksListAdapter.TasksListViewHold
                     else -> R.drawable.ic_book
                 }
                 tvHabitTitle.text = habit.title
-                linItem.setBackgroundResource(color)
+                if(habit.isDone) {
+                    linItem.setBackgroundResource(R.color.background_for_other_views)
+                } else {
+                    linItem.setBackgroundResource(color)
+                }
                 ivIcon.setImageResource(icon)
+
+                binding.checkBox.setOnCheckedChangeListener { _, isChecked ->
+                    val habitModel = HabitModel(
+                        id = habit.id,
+                        title = habit.title,
+                        icon = habit.icon,
+                        color = habit.color,
+                        isDone = isChecked,
+                        totallyDays = habit.totallyDays,
+                        streakDays = habit.streakDays,
+                        doOnMonday = habit.doOnMonday,
+                        doOnTuesday = habit.doOnTuesday,
+                        doOnWednesday = habit.doOnWednesday,
+                        doOnThursday = habit.doOnThursday,
+                        doOnFriday = habit.doOnFriday,
+                        doOnSaturday = habit.doOnSaturday,
+                        doOnSunday = habit.doOnSunday,
+                        partOfDay = habit.partOfDay
+                    )
+                    updateViewModel.update(habitModel)
+                }
 
                 itemView.setOnClickListener {
                     onItemClickListener?.let { it(habit) }

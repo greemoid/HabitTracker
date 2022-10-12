@@ -6,6 +6,7 @@ import androidx.navigation.fragment.findNavController
 import com.greemoid.habittracker.R
 import com.greemoid.habittracker.databinding.FragmentTasksListBinding
 import com.greemoid.habittracker.presentation.core.BaseFragment
+import com.greemoid.habittracker.presentation.update.UpdateViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -16,9 +17,9 @@ class TasksListFragment :
     override fun init() {
         binding.fbtnAdd.navigate(R.id.action_tasksListFragment_to_addTaskFragment)
         binding.btnAdd.navigate(R.id.action_tasksListFragment_to_addTaskFragment)
+        val updateViewModel: UpdateViewModel by viewModels()
 
-        viewModel.getAllHabits()
-        val adapter = TasksListAdapter()
+        val adapter = TasksListAdapter(updateViewModel, viewModel)
         adapter.setOnItemClickListener {
             val bundle = Bundle()
             bundle.putSerializable("habit", it)
@@ -35,7 +36,7 @@ class TasksListFragment :
             7 -> binding.cbSaturday.isChecked = true
         }
         binding.recyclerView.adapter = adapter
-        viewModel.liveData.observe(this) { list ->
+        viewModel.getHabits().observe(this) { list ->
             adapter.differ.submitList(list.asReversed())
         }
     }

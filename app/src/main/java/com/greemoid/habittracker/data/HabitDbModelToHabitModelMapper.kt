@@ -1,12 +1,14 @@
 package com.greemoid.habittracker.data
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.greemoid.habittracker.data.cache.HabitDbModel
 import com.greemoid.habittracker.domain.HabitModel
 
-class HabitDbModelToHabitModelMapper : ListMapper<List<HabitDbModel>, List<HabitModel>> {
-    override fun map(input: List<HabitDbModel>): List<HabitModel> {
+class HabitDbModelToHabitModelMapper : ListMapper<LiveData<List<HabitDbModel>>, LiveData<List<HabitModel>>> {
+    override fun map(input: LiveData<List<HabitDbModel>>): LiveData<List<HabitModel>> {
         val list = mutableListOf<HabitModel>()
-        input.forEach {
+        input.value?.forEach {
             list.add(HabitModel(
                 it.id,
                 it.title,
@@ -25,6 +27,6 @@ class HabitDbModelToHabitModelMapper : ListMapper<List<HabitDbModel>, List<Habit
                 it.partOfDay
             ))
         }
-        return list
+        return MutableLiveData(list)
     }
 }

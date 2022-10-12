@@ -17,19 +17,20 @@ class TasksListViewModel @Inject constructor(
     private val currentDate: CurrentDate,
 ) : ViewModel() {
 
-    private val _liveData = MutableLiveData<List<HabitModel>>()
-    val liveData: LiveData<List<HabitModel>> = _liveData
+    private var _liveData = MutableLiveData<List<HabitModel>>()
+    val liveData: LiveData<List<HabitModel>> = getAllHabitsUseCase.getAllHabits()
 
     fun getDayOfWeek(): Int {
         return Calendar.getInstance().get(Calendar.DAY_OF_WEEK)
+    }
+
+    fun getHabits() : LiveData<List<HabitModel>> {
+        return getAllHabitsUseCase.getAllHabits()
     }
 
     fun getToday(): String {
         return currentDate.getCurrentDate()
     }
 
-    fun getAllHabits() {
-        Log.d("VIEWMODEL", getAllHabitsUseCase.getAllHabits().toString())
-        _liveData.value = getAllHabitsUseCase.getAllHabits()
-    }
+
 }

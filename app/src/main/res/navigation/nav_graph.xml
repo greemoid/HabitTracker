@@ -31,6 +31,9 @@
         <argument
             android:name="habit"
             app:argType="com.greemoid.habittracker.domain.HabitModel" />
+        <action
+            android:id="@+id/action_taskFragment_to_updateTaskFragment"
+            app:destination="@id/updateTaskFragment" />
     </fragment>
     <fragment
         android:id="@+id/tasksListFragment"
@@ -43,5 +46,17 @@
         <action
             android:id="@+id/action_tasksListFragment_to_addTaskFragment"
             app:destination="@id/addTaskFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateTaskFragment"
+        android:name="com.greemoid.habittracker.presentation.update.UpdateTaskFragment"
+        android:label="fragment_update_task"
+        tools:layout="@layout/fragment_update_task" >
+        <action
+            android:id="@+id/action_updateTaskFragment_to_tasksListFragment"
+            app:destination="@id/tasksListFragment" />
+        <argument
+            android:name="habit"
+            app:argType="com.greemoid.habittracker.domain.HabitModel" />
     </fragment>
 </navigation>
