@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.greemoid.habittracker.data.cache.HabitDbModel
 import com.greemoid.habittracker.domain.HabitModel
 import com.greemoid.habittracker.domain.usecases.GetAllHabitsUseCase
 import com.greemoid.habittracker.presentation.date.CurrentDate
@@ -17,14 +18,15 @@ class TasksListViewModel @Inject constructor(
     private val currentDate: CurrentDate,
 ) : ViewModel() {
 
-    private var _liveData = MutableLiveData<List<HabitModel>>()
-    val liveData: LiveData<List<HabitModel>> = getAllHabitsUseCase.getAllHabits()
+    init {
+        getHabits()
+    }
 
     fun getDayOfWeek(): Int {
         return Calendar.getInstance().get(Calendar.DAY_OF_WEEK)
     }
 
-    fun getHabits() : LiveData<List<HabitModel>> {
+    fun getHabits() : LiveData<List<HabitDbModel>> {
         return getAllHabitsUseCase.getAllHabits()
     }
 

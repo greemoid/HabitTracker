@@ -92,7 +92,7 @@ class AddTaskFragment :
                 title = title,
                 icon = icon,
                 color = color,
-                isDone = false,
+                date = "false",
                 totallyDays = 0,
                 streakDays = 0,
                 doOnMonday = doOnMonday,

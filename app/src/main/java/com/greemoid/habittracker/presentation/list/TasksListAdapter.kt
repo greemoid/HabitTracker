@@ -6,31 +6,37 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.greemoid.habittracker.R
+import com.greemoid.habittracker.data.cache.HabitDbModel
 import com.greemoid.habittracker.databinding.TaskItemLayoutBinding
-import com.greemoid.habittracker.domain.HabitModel
 import com.greemoid.habittracker.presentation.core.enums.Colors
 import com.greemoid.habittracker.presentation.core.enums.Icons
 import com.greemoid.habittracker.presentation.update.UpdateViewModel
+import java.text.SimpleDateFormat
+import java.util.*
 import javax.inject.Inject
 
-class TasksListAdapter @Inject constructor(val updateViewModel: UpdateViewModel, val viewModel: TasksListViewModel) :
+class TasksListAdapter @Inject constructor(
+    val updateViewModel: UpdateViewModel,
+    val viewModel: TasksListViewModel,
+) :
     RecyclerView.Adapter<TasksListAdapter.TasksListViewHolder>() {
 
     inner class TasksListViewHolder(private val binding: TaskItemLayoutBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(habit: HabitModel) {
+        fun bind(habit: HabitDbModel) {
             with(binding) {
-                checkBox.isChecked = habit.isDone
+                checkBox.isChecked = isChecked(habit.date)
+
 
                 val color: Int = when (habit.color) {
                     Colors.BLUE.toString() -> R.color.light_blue
-                    Colors.GREEN.toString() -> R.color.light_green
+                    Colors.GREEN.toString() -> R.color.purple
                     Colors.LIGHT_ORANGE.toString() -> R.color.light_orange
                     Colors.PELOROUS.toString() -> R.color.pelorous
                     Colors.ORANGE.toString() -> R.color.orange
                     Colors.SEA.toString() -> R.color.light_sea
                     Colors.RED.toString() -> R.color.red
-                    Colors.BROWN.toString() -> R.color.light_brown
+                    Colors.BROWN.toString() -> R.color.pink
                     else -> R.color.light_blue
                 }
 
@@ -48,7 +54,7 @@ class TasksListAdapter @Inject constructor(val updateViewModel: UpdateViewModel,
                     else -> R.drawable.ic_book
                 }
                 tvHabitTitle.text = habit.title
-                if(habit.isDone) {
+                if (isChecked(habit.date)) {
                     linItem.setBackgroundResource(R.color.background_for_other_views)
                 } else {
                     linItem.setBackgroundResource(color)
@@ -56,30 +62,74 @@ class TasksListAdapter @Inject constructor(val updateViewModel: UpdateViewModel,
                 ivIcon.setImageResource(icon)
 
                 binding.checkBox.setOnCheckedChangeListener { _, isChecked ->
-                    val habitModel = HabitModel(
-                        id = habit.id,
-                        title = habit.title,
-                        icon = habit.icon,
-                        color = habit.color,
-                        isDone = isChecked,
-                        totallyDays = habit.totallyDays,
-                        streakDays = habit.streakDays,
-                        doOnMonday = habit.doOnMonday,
-                        doOnTuesday = habit.doOnTuesday,
-                        doOnWednesday = habit.doOnWednesday,
-                        doOnThursday = habit.doOnThursday,
-                        doOnFriday = habit.doOnFriday,
-                        doOnSaturday = habit.doOnSaturday,
-                        doOnSunday = habit.doOnSunday,
-                        partOfDay = habit.partOfDay
-                    )
-                    updateViewModel.update(habitModel)
+                    if (isChecked) {
+                        linItem.setBackgroundResource(R.color.background_for_other_views)
+                        val totallyDays = habit.totallyDays + 1
+
+                        val habitModel = HabitDbModel(
+                            id = habit.id,
+                            title = habit.title,
+                            icon = habit.icon,
+                            color = habit.color,
+                            date = getCurrentTime(),
+                            totallyDays = totallyDays,
+                            streakDays = habit.streakDays,
+                            doOnMonday = habit.doOnMonday,
+                            doOnTuesday = habit.doOnTuesday,
+                            doOnWednesday = habit.doOnWednesday,
+                            doOnThursday = habit.doOnThursday,
+                            doOnFriday = habit.doOnFriday,
+                            doOnSaturday = habit.doOnSaturday,
+                            doOnSunday = habit.doOnSunday,
+                            partOfDay = habit.partOfDay
+                        )
+                        updateViewModel.update(habitModel)
+                    } else {
+                        linItem.setBackgroundResource(color)
+                        val totallyDays = habit.totallyDays - 1
+                        val habitModel = HabitDbModel(
+                            id = habit.id,
+                            title = habit.title,
+                            icon = habit.icon,
+                            color = habit.color,
+                            date = "cancelled",
+                            totallyDays = totallyDays,
+                            streakDays = habit.streakDays,
+                            doOnMonday = habit.doOnMonday,
+                            doOnTuesday = habit.doOnTuesday,
+                            doOnWednesday = habit.doOnWednesday,
+                            doOnThursday = habit.doOnThursday,
+                            doOnFriday = habit.doOnFriday,
+                            doOnSaturday = habit.doOnSaturday,
+                            doOnSunday = habit.doOnSunday,
+                            partOfDay = habit.partOfDay
+                        )
+                        updateViewModel.update(habitModel)
+                    }
+
                 }
 
                 itemView.setOnClickListener {
                     onItemClickListener?.let { it(habit) }
                 }
             }
+        }
+
+        private fun isChecked(date: String): Boolean {
+            return date == getCurrentTime()
+        }
+
+        private fun getCurrentTime(): String {
+            val time = Calendar.getInstance().time
+            val formatter = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+            return formatter.format(time)
+        }
+
+        //todo yest
+        private fun getYesterday(): String {
+            val time = Calendar.getInstance().before(Calendar.getInstance().time)
+            val formatter = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+            return formatter.format(time)
         }
     }
 
@@ -96,17 +146,17 @@ class TasksListAdapter @Inject constructor(val updateViewModel: UpdateViewModel,
 
     override fun getItemCount(): Int = differ.currentList.size
 
-    private val differCallback = object : DiffUtil.ItemCallback<HabitModel>() {
-        override fun areItemsTheSame(oldItem: HabitModel, newItem: HabitModel): Boolean {
+    private val differCallback = object : DiffUtil.ItemCallback<HabitDbModel>() {
+        override fun areItemsTheSame(oldItem: HabitDbModel, newItem: HabitDbModel): Boolean {
             return oldItem.title == newItem.title
         }
 
-        override fun areContentsTheSame(oldItem: HabitModel, newItem: HabitModel): Boolean {
+        override fun areContentsTheSame(oldItem: HabitDbModel, newItem: HabitDbModel): Boolean {
             return oldItem == newItem
         }
     }
 
-    fun setOnItemClickListener(listener: (HabitModel) -> Unit) {
+    fun setOnItemClickListener(listener: (HabitDbModel) -> Unit) {
         onItemClickListener = listener
     }
 
@@ -114,4 +164,4 @@ class TasksListAdapter @Inject constructor(val updateViewModel: UpdateViewModel,
 }
 
 
-var onItemClickListener: ((HabitModel) -> Unit)? = null
+var onItemClickListener: ((HabitDbModel) -> Unit)? = null

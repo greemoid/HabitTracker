@@ -17,9 +17,10 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="88dp"
         android:layout_margin="@dimen/size_8dp"
-        app:cardCornerRadius="@dimen/size_16dp"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/checkBox"
         app:layout_constraintTop_toTopOf="parent">
@@ -29,25 +30,27 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/iv_icon"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="@dimen/size_16dp"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/ic_baseline_event_note_24"
-            android:contentDescription="@string/icon_of_habit" />
+            <ImageView
+                android:id="@+id/iv_icon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/size_16dp"
+                android:contentDescription="@string/icon_of_habit"
+                android:src="@drawable/ic_baseline_event_note_24" />
 
-        <TextView
-            android:id="@+id/tv_habit_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/text_18sp"
-            android:padding="@dimen/size_32dp"
-            android:textStyle="bold"
-            android:textColor="@color/main_text"
-            tools:text="Ведите дневник"
-            android:layout_gravity="center"/>
+            <TextView
+                android:id="@+id/tv_habit_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/size_16dp"
+                android:layout_marginEnd="@dimen/size_8dp"
+                android:fontFamily="@font/e_ukraine_bold"
+                android:includeFontPadding="false"
+                android:textColor="@color/main_text"
+                android:textSize="@dimen/text_18sp"
+                tools:text="Ведите дневник" />
 
         </LinearLayout>
 

@@ -19,6 +19,7 @@ class TaskFragment :
         binding.btnGoBack.navigate(R.id.action_taskFragment_to_tasksListFragment)
         val args: TaskFragmentArgs by navArgs()
         binding.tvNameOfTheHabit.text = args.habit.title
+        binding.tvTotalNumber.text = args.habit.totallyDays.toString()
         binding.btnDelete.setOnClickListener {
             viewModel.deleteHabit(args.habit)
             findNavController().navigate(R.id.action_taskFragment_to_tasksListFragment)

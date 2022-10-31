@@ -7,6 +7,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.greemoid.habittracker.R
+import com.greemoid.habittracker.data.cache.HabitDbModel
 import com.greemoid.habittracker.databinding.FragmentUpdateTaskBinding
 import com.greemoid.habittracker.domain.HabitModel
 import com.greemoid.habittracker.presentation.core.BaseFragment
@@ -133,12 +134,12 @@ class UpdateTaskFragment :
             val isCorrect = doOnMonday || doOnTuesday || doOnWednesday || doOnThursday
                     || doOnFriday || doOnSaturday || doOnSunday
 
-            val habit = HabitModel(
+            val habit = HabitDbModel(
                 id = habitArgs.id,
                 title = title,
                 icon = icon,
                 color = color,
-                isDone = habitArgs.isDone,
+                date = habitArgs.date,
                 totallyDays = habitArgs.totallyDays,
                 streakDays = habitArgs.streakDays,
                 doOnMonday = doOnMonday,

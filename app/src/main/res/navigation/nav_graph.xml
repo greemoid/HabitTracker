@@ -30,7 +30,7 @@
             app:destination="@id/addTaskFragment" />
         <argument
             android:name="habit"
-            app:argType="com.greemoid.habittracker.domain.HabitModel" />
+            app:argType="com.greemoid.habittracker.data.cache.HabitDbModel" />
         <action
             android:id="@+id/action_taskFragment_to_updateTaskFragment"
             app:destination="@id/updateTaskFragment" />
@@ -57,6 +57,6 @@
             app:destination="@id/tasksListFragment" />
         <argument
             android:name="habit"
-            app:argType="com.greemoid.habittracker.domain.HabitModel" />
+            app:argType="com.greemoid.habittracker.data.cache.HabitDbModel" />
     </fragment>
 </navigation>
