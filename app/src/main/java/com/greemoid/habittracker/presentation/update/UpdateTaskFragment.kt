@@ -9,7 +9,6 @@ import androidx.navigation.fragment.navArgs
 import com.greemoid.habittracker.R
 import com.greemoid.habittracker.data.cache.HabitDbModel
 import com.greemoid.habittracker.databinding.FragmentUpdateTaskBinding
-import com.greemoid.habittracker.domain.HabitModel
 import com.greemoid.habittracker.presentation.core.BaseFragment
 import com.greemoid.habittracker.presentation.core.enums.Colors
 import com.greemoid.habittracker.presentation.core.enums.Icons
@@ -36,27 +35,173 @@ class UpdateTaskFragment :
 
 
         when(habitArgs.icon) {
-            Icons.BOOK.toString() -> binding.rbBook.isChecked = true
-            Icons.MEDITATION.toString() -> binding.rbMeditation.isChecked = true
-            Icons.MONEY.toString() -> binding.rbMoney.isChecked = true
-            Icons.NO_FOOD.toString() -> binding.rbNoFood.isChecked = true
-            Icons.NOTE.toString() -> binding.rbNote.isChecked = true
-            Icons.PALETTE.toString() -> binding.rbPalette.isChecked = true
-            Icons.LAPTOP.toString() -> binding.rbLaptop.isChecked = true
-            Icons.RUN.toString() -> binding.rbRun.isChecked = true
-            Icons.SCHOOL.toString() -> binding.rbSchool.isChecked = true
-            Icons.SPORT.toString() -> binding.rbSport.isChecked = true
+            Icons.BOOK.toString() -> {
+                binding.rbBook.isChecked = true
+                binding.ivIconOfTask.setImageResource(R.drawable.ic_book)
+            }
+            Icons.MEDITATION.toString() -> {
+                binding.rbMeditation.isChecked = true
+                binding.ivIconOfTask.setImageResource(R.drawable.ic_meditation)
+            }
+            Icons.MONEY.toString() -> {
+                binding.rbMoney.isChecked = true
+                binding.ivIconOfTask.setImageResource(R.drawable.ic_money)
+            }
+            Icons.NO_FOOD.toString() -> {
+                binding.rbNoFood.isChecked = true
+                binding.ivIconOfTask.setImageResource(R.drawable.ic_no_food)
+            }
+            Icons.NOTE.toString() -> {
+                binding.rbNote.isChecked = true
+                binding.ivIconOfTask.setImageResource(R.drawable.ic_note)
+            }
+            Icons.PALETTE.toString() -> {
+                binding.rbPalette.isChecked = true
+                binding.ivIconOfTask.setImageResource(R.drawable.ic_palette)
+            }
+            Icons.LAPTOP.toString() -> {
+                binding.rbLaptop.isChecked = true
+                binding.ivIconOfTask.setImageResource(R.drawable.ic_laptop)
+            }
+            Icons.RUN.toString() -> {
+                binding.rbRun.isChecked = true
+                binding.ivIconOfTask.setImageResource(R.drawable.ic_run)
+            }
+            Icons.SCHOOL.toString() -> {
+                binding.rbSchool.isChecked = true
+                binding.ivIconOfTask.setImageResource(R.drawable.ic_school)
+            }
+            Icons.SPORT.toString() -> {
+                binding.rbSport.isChecked = true
+                binding.ivIconOfTask.setImageResource(R.drawable.ic_sport)
+            }
         }
 
         when(habitArgs.color) {
-            Colors.BLUE.toString() -> binding.rbBlue.isChecked = true
-            Colors.GREEN.toString() -> binding.rbGreen.isChecked = true
-            Colors.LIGHT_ORANGE.toString() -> binding.rbLightOrange.isChecked = true
-            Colors.PELOROUS.toString() -> binding.rbPelorous.isChecked = true
-            Colors.ORANGE.toString() -> binding.rbOrange.isChecked = true
-            Colors.SEA.toString() -> binding.rbSea.isChecked = true
-            Colors.RED.toString() -> binding.rbRed.isChecked = true
-            Colors.BROWN.toString() -> binding.rbBrown.isChecked = true
+            Colors.BLUE.toString() -> {
+                binding.rbBlue.isChecked = true
+                binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.light_blue, resources.newTheme()))
+            }
+            Colors.PURPLE.toString() -> {
+                binding.rbPurple.isChecked = true
+                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.purple, resources.newTheme()))
+            }
+            Colors.LIGHT_ORANGE.toString() -> {
+                binding.rbLightOrange.isChecked = true
+                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.light_orange, resources.newTheme()))
+            }
+            Colors.PELOROUS.toString() -> {
+                binding.rbPelorous.isChecked = true
+                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.pelorous, resources.newTheme()))
+            }
+            Colors.ORANGE.toString() -> {
+                binding.rbOrange.isChecked = true
+                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.orange, resources.newTheme()))
+            }
+            Colors.SEA.toString() -> {
+                binding.rbSea.isChecked = true
+                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.light_sea, resources.newTheme()))
+            }
+            Colors.RED.toString() -> {
+                binding.rbRed.isChecked = true
+                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.red, resources.newTheme()))
+            }
+            Colors.PINK.toString() -> {
+                binding.rbPink.isChecked = true
+                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.pink, resources.newTheme()))
+            }
+        }
+
+        var icon = Icons.BOOK.toString()
+        var color = Colors.BLUE.toString()
+        binding.radioGroupWithIcons.setOnCheckedChangeListener { _, id ->
+            when(id) {
+                R.id.rb_book -> {
+                    icon = Icons.BOOK.toString()
+                    binding.ivIconOfTask.setImageResource(R.drawable.ic_book)
+                }
+                R.id.rb_meditation -> {
+                    icon = Icons.MEDITATION.toString()
+                    binding.ivIconOfTask.setImageResource(R.drawable.ic_meditation)
+                }
+                R.id.rb_money -> {
+                    icon = Icons.MONEY.toString()
+                    binding.ivIconOfTask.setImageResource(R.drawable.ic_money)
+                }
+                R.id.rb_no_food -> {
+                    icon = Icons.NO_FOOD.toString()
+                    binding.ivIconOfTask.setImageResource(R.drawable.ic_no_food)
+                }
+                R.id.rb_note -> {
+                    icon = Icons.NOTE.toString()
+                    binding.ivIconOfTask.setImageResource(R.drawable.ic_note)
+                }
+                R.id.rb_palette -> {
+                    icon = Icons.PALETTE.toString()
+                    binding.ivIconOfTask.setImageResource(R.drawable.ic_palette)
+                }
+                R.id.rb_laptop -> {
+                    icon = Icons.LAPTOP.toString()
+                    binding.ivIconOfTask.setImageResource(R.drawable.ic_laptop)
+                }
+                R.id.rb_run -> {
+                    icon = Icons.RUN.toString()
+                    binding.ivIconOfTask.setImageResource(R.drawable.ic_run)
+                }
+                R.id.rb_school -> {
+                    icon = Icons.SCHOOL.toString()
+                    binding.ivIconOfTask.setImageResource(R.drawable.ic_school)
+                }
+                R.id.rb_sport -> {
+                    icon = Icons.SPORT.toString()
+                    binding.ivIconOfTask.setImageResource(R.drawable.ic_sport)
+                }
+                else -> {
+                    icon = Icons.BOOK.toString()
+                    binding.ivIconOfTask.setImageResource(R.drawable.ic_book)
+                }
+            }
+        }
+
+        binding.radioGroupWithColors.setOnCheckedChangeListener { _, id ->
+            when(id) {
+                R.id.rb_blue -> {
+                    color = Colors.BLUE.toString()
+                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.light_blue, resources.newTheme()))
+                }
+                R.id.rb_purple -> {
+                    color = Colors.PURPLE.toString()
+                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.purple, resources.newTheme()))
+                }
+                R.id.rb_light_orange -> {
+                    color = Colors.LIGHT_ORANGE.toString()
+                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.light_orange, resources.newTheme()))
+                }
+                R.id.rb_pelorous -> {
+                    color = Colors.PELOROUS.toString()
+                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.pelorous, resources.newTheme()))
+                }
+                R.id.rb_orange -> {
+                    color = Colors.ORANGE.toString()
+                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.orange, resources.newTheme()))
+                }
+                R.id.rb_sea -> {
+                    color = Colors.SEA.toString()
+                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.light_sea, resources.newTheme()))
+                }
+                R.id.rb_red -> {
+                    color = Colors.RED.toString()
+                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.red, resources.newTheme()))
+                }
+                R.id.rb_pink -> {
+                    color = Colors.PINK.toString()
+                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.pink, resources.newTheme()))
+                }
+                else -> {
+                    color = Colors.BLUE.toString()
+                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.light_blue, resources.newTheme()))
+                }
+            }
         }
 
         when(habitArgs.partOfDay) {
@@ -85,33 +230,6 @@ class UpdateTaskFragment :
 
         binding.btnSave.setOnClickListener {
             val title = binding.etTitle.text.toString()
-
-
-            val icon = when (binding.radioGroupWithIcons.checkedRadioButtonId) {
-                R.id.rb_book -> Icons.BOOK.toString()
-                R.id.rb_meditation -> Icons.MEDITATION.toString()
-                R.id.rb_money -> Icons.MONEY.toString()
-                R.id.rb_no_food -> Icons.NO_FOOD.toString()
-                R.id.rb_note -> Icons.NOTE.toString()
-                R.id.rb_palette -> Icons.PALETTE.toString()
-                R.id.rb_laptop -> Icons.LAPTOP.toString()
-                R.id.rb_run -> Icons.RUN.toString()
-                R.id.rb_school -> Icons.SCHOOL.toString()
-                R.id.rb_sport -> Icons.SPORT.toString()
-                else -> Icons.BOOK.toString()
-            }
-
-            val color = when (binding.radioGroupWithColors.checkedRadioButtonId) {
-                R.id.rb_blue -> Colors.BLUE.toString()
-                R.id.rb_green -> Colors.GREEN.toString()
-                R.id.rb_light_orange -> Colors.LIGHT_ORANGE.toString()
-                R.id.rb_pelorous -> Colors.PELOROUS.toString()
-                R.id.rb_orange -> Colors.ORANGE.toString()
-                R.id.rb_sea -> Colors.SEA.toString()
-                R.id.rb_red -> Colors.RED.toString()
-                R.id.rb_brown -> Colors.BROWN.toString()
-                else -> Colors.BLUE.toString()
-            }
 
             val partOfDay = when (binding.radioGroupWithDays.checkedRadioButtonId) {
                 R.id.rb_doesnt_matter -> PartOfDay.DOESNTMATTER.toString()

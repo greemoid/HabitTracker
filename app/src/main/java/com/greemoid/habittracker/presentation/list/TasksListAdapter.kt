@@ -27,16 +27,15 @@ class TasksListAdapter @Inject constructor(
             with(binding) {
                 checkBox.isChecked = isChecked(habit.date)
 
-
                 val color: Int = when (habit.color) {
                     Colors.BLUE.toString() -> R.color.light_blue
-                    Colors.GREEN.toString() -> R.color.purple
+                    Colors.PURPLE.toString() -> R.color.purple
                     Colors.LIGHT_ORANGE.toString() -> R.color.light_orange
                     Colors.PELOROUS.toString() -> R.color.pelorous
                     Colors.ORANGE.toString() -> R.color.orange
                     Colors.SEA.toString() -> R.color.light_sea
                     Colors.RED.toString() -> R.color.red
-                    Colors.BROWN.toString() -> R.color.pink
+                    Colors.PINK.toString() -> R.color.pink
                     else -> R.color.light_blue
                 }
 
@@ -54,6 +53,7 @@ class TasksListAdapter @Inject constructor(
                     else -> R.drawable.ic_book
                 }
                 tvHabitTitle.text = habit.title
+
                 if (isChecked(habit.date)) {
                     linItem.setBackgroundResource(R.color.background_for_other_views)
                 } else {
@@ -65,7 +65,14 @@ class TasksListAdapter @Inject constructor(
                     if (isChecked) {
                         linItem.setBackgroundResource(R.color.background_for_other_views)
                         val totallyDays = habit.totallyDays + 1
-
+                        val streakDays =
+                            if (habit.streakDays == 0) {
+                                1
+                            } else if (habit.streakDays != 0 && habit.date == getYesterday()) {
+                                habit.streakDays + 1
+                            } else {
+                                habit.streakDays
+                            }
                         val habitModel = HabitDbModel(
                             id = habit.id,
                             title = habit.title,
@@ -73,7 +80,7 @@ class TasksListAdapter @Inject constructor(
                             color = habit.color,
                             date = getCurrentTime(),
                             totallyDays = totallyDays,
-                            streakDays = habit.streakDays,
+                            streakDays = streakDays,
                             doOnMonday = habit.doOnMonday,
                             doOnTuesday = habit.doOnTuesday,
                             doOnWednesday = habit.doOnWednesday,
@@ -86,7 +93,9 @@ class TasksListAdapter @Inject constructor(
                         updateViewModel.update(habitModel)
                     } else {
                         linItem.setBackgroundResource(color)
-                        val totallyDays = habit.totallyDays - 1
+                        val totallyDays = if (habit.totallyDays > 0) habit.totallyDays - 1 else 0
+                        val streakDays =
+                            if (habit.streakDays > 0) habit.streakDays - 1 else 0
                         val habitModel = HabitDbModel(
                             id = habit.id,
                             title = habit.title,
@@ -94,7 +103,7 @@ class TasksListAdapter @Inject constructor(
                             color = habit.color,
                             date = "cancelled",
                             totallyDays = totallyDays,
-                            streakDays = habit.streakDays,
+                            streakDays = streakDays,
                             doOnMonday = habit.doOnMonday,
                             doOnTuesday = habit.doOnTuesday,
                             doOnWednesday = habit.doOnWednesday,
@@ -127,9 +136,10 @@ class TasksListAdapter @Inject constructor(
 
         //todo yest
         private fun getYesterday(): String {
-            val time = Calendar.getInstance().before(Calendar.getInstance().time)
-            val formatter = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
-            return formatter.format(time)
+            val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+            val calendar = Calendar.getInstance()
+            calendar.add(Calendar.DATE, -1)
+            return dateFormat.format(calendar.time)
         }
     }
 
@@ -143,6 +153,7 @@ class TasksListAdapter @Inject constructor(
     override fun onBindViewHolder(holder: TasksListViewHolder, position: Int) {
         holder.bind(differ.currentList[position])
     }
+
 
     override fun getItemCount(): Int = differ.currentList.size
 

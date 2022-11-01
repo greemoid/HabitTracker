@@ -2,11 +2,11 @@ package com.greemoid.habittracker.presentation.core.enums
 
 enum class Colors {
     BLUE,
-    GREEN,
+    PURPLE,
     LIGHT_ORANGE,
     PELOROUS,
     ORANGE,
     SEA,
     RED,
-    BROWN
+    PINK
 }

@@ -39,6 +39,7 @@
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/orange_unchecked.xml" value="0.4425" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/pelorous_checked.xml" value="0.4425" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/pelorous_unchecked.xml" value="0.4425" />
+        <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/pink_checked.xml" value="0.433" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/radio.xml" value="0.4425" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/radio_blue.xml" value="0.4425" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/radio_book.xml" value="0.4425" />
@@ -56,6 +57,7 @@
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/radio_pallete.xml" value="0.4425" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/radio_part_of_the_day.xml" value="0.4425" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/radio_pelorous.xml" value="0.4425" />
+        <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/radio_purple.xml" value="0.433" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/radio_red.xml" value="0.4425" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/radio_run.xml" value="0.4425" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/radio_school.xml" value="0.4425" />
@@ -73,7 +75,7 @@
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/sea_unchecked.xml" value="0.4425" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/font/gdfgdf.xml" value="0.478125" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/layout/activity_main.xml" value="0.4" />
-        <entry key="..\:/Project/HabitTracker/app/src/main/res/layout/fragment_add_task.xml" value="0.4" />
+        <entry key="..\:/Project/HabitTracker/app/src/main/res/layout/fragment_add_task.xml" value="0.1" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/layout/fragment_task.xml" value="0.440625" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/layout/fragment_tasks_list.xml" value="0.42239583333333336" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/layout/fragment_update_task.xml" value="0.440625" />

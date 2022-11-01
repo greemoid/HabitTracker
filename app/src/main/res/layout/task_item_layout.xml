@@ -32,8 +32,8 @@
 
             <ImageView
                 android:id="@+id/iv_icon"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="@dimen/size_16dp"
                 android:contentDescription="@string/icon_of_habit"
@@ -49,7 +49,7 @@
                 android:fontFamily="@font/e_ukraine_bold"
                 android:includeFontPadding="false"
                 android:textColor="@color/main_text"
-                android:textSize="@dimen/text_18sp"
+                android:textSize="@dimen/text_16sp"
                 tools:text="Ведите дневник" />
 
         </LinearLayout>

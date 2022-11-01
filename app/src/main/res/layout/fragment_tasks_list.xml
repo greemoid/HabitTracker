@@ -33,7 +33,7 @@
         android:includeFontPadding="false"
         app:layout_constraintStart_toStartOf="@+id/tv_today"
         app:layout_constraintTop_toBottomOf="@+id/tv_today"
-        android:text="3 oct" />
+        tools:text="3 oct" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fbtn_add"
@@ -52,6 +52,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="@dimen/size_8dp"
         android:background="@drawable/rounded_corners_bg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,7 +65,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_corners_bg"
-            android:paddingBottom="@dimen/size_24dp"
+            android:paddingBottom="@dimen/size_32dp"
             android:layout_marginTop="@dimen/size_8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

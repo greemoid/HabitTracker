@@ -128,6 +128,17 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
 
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/color_of_task"
+                    android:layout_width="@dimen/size_16dp"
+                    android:layout_height="@dimen/size_16dp"
+                    app:cardBackgroundColor="@color/light_blue"
+                    android:layout_marginEnd="40dp"
+                    app:cardCornerRadius="@dimen/size_16dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/btn_choose_color"
+                    app:layout_constraintEnd_toEndOf="@+id/btn_choose_color"
+                    app:layout_constraintTop_toTopOf="@+id/btn_choose_color" />
+
                 <TextView
                     android:id="@+id/btn_choose_color"
                     android:layout_width="0dp"
@@ -492,12 +503,12 @@
                             android:checked="true" />
 
                         <RadioButton
-                            android:id="@+id/rb_green"
+                            android:id="@+id/rb_purple"
                             android:layout_width="64dp"
                             android:layout_height="64dp"
                             android:layout_margin="@dimen/size_8dp"
                             android:layout_weight="0.25"
-                            android:background="@drawable/radio_green"
+                            android:background="@drawable/radio_purple"
                             android:button="@android:color/transparent" />
 
                         <RadioButton
@@ -554,12 +565,12 @@
                             android:button="@android:color/transparent" />
 
                         <RadioButton
-                            android:id="@+id/rb_brown"
+                            android:id="@+id/rb_pink"
                             android:layout_width="64dp"
                             android:layout_height="64dp"
                             android:layout_margin="@dimen/size_8dp"
                             android:layout_weight="0.25"
-                            android:background="@drawable/radio_light_brown"
+                            android:background="@drawable/radio_pink"
                             android:button="@android:color/transparent" />
 
                     </LinearLayout>
