@@ -10,7 +10,7 @@ interface CurrentDate {
     class Base() : CurrentDate {
         override fun getCurrentDate(): String {
             val date = getCurrentDateTime().toString("dd")
-            val day = getCurrentDay().substring(0, 2)
+            val day = getCurrentDay()
             return "$date $day"
         }
 

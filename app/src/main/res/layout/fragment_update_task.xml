@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main_background"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".presentation.update.UpdateTaskFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,6 +34,7 @@
             android:layout_marginStart="@dimen/size_16dp"
             android:background="@drawable/edit_text_background"
             android:ems="10"
+            android:fontFamily="@font/e_ukraine_light"
             android:gravity="start|top"
             android:hint="@string/type_name_of_task"
             android:importantForAutofill="no"
@@ -64,6 +66,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/size_4dp"
+            android:fontFamily="@font/e_ukraine_light"
             android:text="@string/regular_habit"
             android:textColor="@color/secondary_text"
             android:textStyle="bold"
@@ -106,6 +109,7 @@
                     android:layout_gravity="center_vertical|start"
                     android:layout_weight="0.8"
                     android:background="?android:attr/selectableItemBackground"
+                    android:fontFamily="@font/e_ukraine_light"
                     android:padding="@dimen/size_8dp"
                     android:text="@string/icon"
                     android:textColor="@color/main_text"
@@ -133,8 +137,8 @@
                     android:id="@+id/color_of_task"
                     android:layout_width="@dimen/size_16dp"
                     android:layout_height="@dimen/size_16dp"
-                    app:cardBackgroundColor="@color/light_blue"
                     android:layout_marginEnd="40dp"
+                    app:cardBackgroundColor="@color/light_blue"
                     app:cardCornerRadius="@dimen/size_16dp"
                     app:layout_constraintBottom_toBottomOf="@+id/btn_choose_color"
                     app:layout_constraintEnd_toEndOf="@+id/btn_choose_color"
@@ -147,6 +151,7 @@
                     android:layout_gravity="center_vertical|start"
                     android:layout_weight="0.8"
                     android:background="?android:attr/selectableItemBackground"
+                    android:fontFamily="@font/e_ukraine_light"
                     android:padding="@dimen/size_8dp"
                     android:text="@string/color"
                     android:textColor="@color/main_text"
@@ -167,6 +172,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/size_8dp"
+            android:fontFamily="@font/e_ukraine_light"
             android:text="@string/repeat"
             android:textColor="@color/secondary_text"
             android:textStyle="bold"
@@ -198,6 +204,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/size_16dp"
                     android:background="?android:attr/selectableItemBackground"
+                    android:fontFamily="@font/e_ukraine_light"
                     android:gravity="center_vertical"
                     android:padding="@dimen/size_4dp"
                     android:text="@string/days_of_repeat"
@@ -222,6 +229,7 @@
                         android:background="@drawable/custom_checkbox"
                         android:button="@null"
                         android:checked="true"
+                        android:fontFamily="@font/e_ukraine_light"
                         android:gravity="center"
                         android:text="@string/monday"
                         android:textColor="@color/main_text"
@@ -235,6 +243,7 @@
                         android:background="@drawable/custom_checkbox"
                         android:button="@null"
                         android:checked="true"
+                        android:fontFamily="@font/e_ukraine_light"
                         android:gravity="center"
                         android:text="@string/tuesday"
                         android:textColor="@color/main_text"
@@ -248,6 +257,7 @@
                         android:background="@drawable/custom_checkbox"
                         android:button="@null"
                         android:checked="true"
+                        android:fontFamily="@font/e_ukraine_light"
                         android:gravity="center"
                         android:text="@string/wednesday"
                         android:textColor="@color/main_text"
@@ -261,6 +271,7 @@
                         android:background="@drawable/custom_checkbox"
                         android:button="@null"
                         android:checked="true"
+                        android:fontFamily="@font/e_ukraine_light"
                         android:gravity="center"
                         android:text="@string/thursday"
                         android:textColor="@color/main_text"
@@ -274,6 +285,7 @@
                         android:background="@drawable/custom_checkbox"
                         android:button="@null"
                         android:checked="true"
+                        android:fontFamily="@font/e_ukraine_light"
                         android:gravity="center"
                         android:text="@string/friday"
                         android:textColor="@color/main_text"
@@ -287,6 +299,7 @@
                         android:background="@drawable/custom_checkbox"
                         android:button="@null"
                         android:checked="true"
+                        android:fontFamily="@font/e_ukraine_light"
                         android:gravity="center"
                         android:text="@string/saturday"
                         android:textColor="@color/main_text"
@@ -300,6 +313,7 @@
                         android:background="@drawable/custom_checkbox"
                         android:button="@null"
                         android:checked="true"
+                        android:fontFamily="@font/e_ukraine_light"
                         android:gravity="center"
                         android:text="@string/sunday"
                         android:textColor="@color/main_text"
@@ -318,6 +332,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/size_8dp"
+            android:fontFamily="@font/e_ukraine_light"
             android:text="@string/do_do"
             android:textColor="@color/secondary_text"
             android:textStyle="bold"
@@ -330,6 +345,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/size_16dp"
             android:background="?android:attr/selectableItemBackground"
+            android:fontFamily="@font/e_ukraine_light"
             android:padding="@dimen/size_8dp"
             android:text="@string/advanced_settings"
             android:textColor="@color/main_text"
@@ -339,6 +355,111 @@
             app:layout_constraintEnd_toEndOf="@+id/cardView2"
             app:layout_constraintStart_toStartOf="@+id/cardView2"
             app:layout_constraintTop_toBottomOf="@+id/radio_group_with_days" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/size_8dp"
+            android:background="@drawable/radio_button_background_unchecked"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/btn_advanced_settings"
+            app:layout_constraintStart_toStartOf="@+id/btn_advanced_settings"
+            app:layout_constraintTop_toBottomOf="@+id/btn_advanced_settings">
+
+
+            <TextView
+                android:id="@+id/tv_notifications"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/e_ukraine_medium"
+                android:text="@string/notif_for_this_habit"
+                android:textColor="@color/main_text"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_switch_notification"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/btn_switch_notification" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/btn_switch_notification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:textColorLink="@color/button_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_time_of_notification"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/rounded_corners_for_tv_bg"
+                android:fontFamily="@font/e_ukraine_bold"
+                android:gravity="center"
+                android:padding="@dimen/size_16dp"
+                android:text="12:00"
+                android:textColor="@color/main_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_notifications" />
+
+            <TextView
+                android:id="@+id/tv_inspiration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/size_16dp"
+                android:fontFamily="@font/e_ukraine_medium"
+                android:text="@string/inspiration"
+                android:textColor="@color/main_text"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_time_of_notification" />
+
+            <EditText
+                android:id="@+id/et_inspiration"
+                android:layout_width="@dimen/size_0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/size_16dp"
+                android:layout_marginStart="@dimen/size_16dp"
+                android:layout_marginBottom="@dimen/size_16dp"
+                android:background="@drawable/edit_text_background_second"
+                android:ems="10"
+                android:fontFamily="@font/e_ukraine_light"
+                android:gravity="start|top"
+                android:hint="@string/inspire_yourself"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:maxLines="1"
+                android:padding="@dimen/size_8dp"
+                android:paddingStart="@dimen/size_0dp"
+                android:paddingEnd="@dimen/size_0dp"
+                android:textColor="@color/main_text"
+                android:textColorHint="@color/secondary_text"
+                android:textSize="@dimen/text_16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/iv_pen_inspiration"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_inspiration" />
+
+            <ImageView
+                android:id="@+id/iv_pen_inspiration"
+                android:layout_width="@dimen/size_24dp"
+                android:layout_height="@dimen/size_24dp"
+                android:layout_marginEnd="@dimen/size_8dp"
+                android:contentDescription="@string/type_your_name_of_task"
+                android:src="@drawable/ic_pen"
+                app:layout_constraintBottom_toBottomOf="@+id/et_inspiration"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/et_inspiration" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <com.greemoid.habittracker.presentation.core.MultiRowsRadioGroup
             android:id="@+id/radio_group_with_days"
@@ -366,6 +487,7 @@
                     android:background="@drawable/radio_part_of_the_day"
                     android:button="@android:color/transparent"
                     android:checked="true"
+                    android:fontFamily="@font/e_ukraine_light"
                     android:gravity="center"
                     android:padding="@dimen/size_16dp"
                     android:text="@string/doesnt_matter"
@@ -386,6 +508,7 @@
                     android:layout_weight="0.5"
                     android:background="@drawable/radio_part_of_the_day"
                     android:button="@android:color/transparent"
+                    android:fontFamily="@font/e_ukraine_light"
                     android:gravity="center"
                     android:padding="@dimen/size_16dp"
                     android:text="@string/morning"
@@ -413,6 +536,7 @@
                     android:layout_weight="0.5"
                     android:background="@drawable/radio_part_of_the_day"
                     android:button="@android:color/transparent"
+                    android:fontFamily="@font/e_ukraine_light"
                     android:gravity="center"
                     android:padding="@dimen/size_16dp"
                     android:text="@string/day"
@@ -433,6 +557,7 @@
                     android:layout_weight="0.5"
                     android:background="@drawable/radio_part_of_the_day"
                     android:button="@android:color/transparent"
+                    android:fontFamily="@font/e_ukraine_light"
                     android:gravity="center"
                     android:padding="@dimen/size_16dp"
                     android:text="@string/evening"
@@ -444,21 +569,30 @@
             </LinearLayout>
         </com.greemoid.habittracker.presentation.core.MultiRowsRadioGroup>
 
+        <View
+            android:layout_width="@dimen/size_0dp"
+            android:layout_height="@dimen/size_0dp"
+            android:layout_margin="@dimen/size_16dp"
+            app:layout_constraintBottom_toTopOf="@id/btn_save"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_advanced_settings" />
+
         <Button
             android:id="@+id/btn_save"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/size_8dp"
-            android:layout_marginTop="@dimen/size_32dp"
-            android:layout_marginEnd="@dimen/size_8dp"
+            android:layout_margin="@dimen/size_16dp"
             android:background="@drawable/rounded_blue_button_bg"
+            android:fontFamily="@font/e_ukraine_medium"
             android:text="@string/save"
             android:textColor="@color/main_text"
             android:textStyle="bold"
             app:backgroundTint="@null"
+            app:layout_constraintBottom_toBottomOf="@id/constraint_layout"
             app:layout_constraintEnd_toEndOf="@+id/btn_advanced_settings"
             app:layout_constraintStart_toStartOf="@+id/btn_advanced_settings"
-            app:layout_constraintTop_toBottomOf="@id/btn_advanced_settings" />
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
         <LinearLayout
             android:id="@+id/linear_with_cards"

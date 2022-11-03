@@ -34,7 +34,9 @@ class UpdateTaskFragment :
         binding.cbSaturday.isChecked = habitArgs.doOnSaturday
 
 
-        when(habitArgs.icon) {
+
+
+        when (habitArgs.icon) {
             Icons.BOOK.toString() -> {
                 binding.rbBook.isChecked = true
                 binding.ivIconOfTask.setImageResource(R.drawable.ic_book)
@@ -77,45 +79,53 @@ class UpdateTaskFragment :
             }
         }
 
-        when(habitArgs.color) {
+        when (habitArgs.color) {
             Colors.BLUE.toString() -> {
                 binding.rbBlue.isChecked = true
-                binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.light_blue, resources.newTheme()))
+                binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.light_blue,
+                    resources.newTheme()))
             }
             Colors.PURPLE.toString() -> {
                 binding.rbPurple.isChecked = true
-                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.purple, resources.newTheme()))
+                binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.purple,
+                    resources.newTheme()))
             }
             Colors.LIGHT_ORANGE.toString() -> {
                 binding.rbLightOrange.isChecked = true
-                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.light_orange, resources.newTheme()))
+                binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.light_orange,
+                    resources.newTheme()))
             }
             Colors.PELOROUS.toString() -> {
                 binding.rbPelorous.isChecked = true
-                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.pelorous, resources.newTheme()))
+                binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.pelorous,
+                    resources.newTheme()))
             }
             Colors.ORANGE.toString() -> {
                 binding.rbOrange.isChecked = true
-                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.orange, resources.newTheme()))
+                binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.orange,
+                    resources.newTheme()))
             }
             Colors.SEA.toString() -> {
                 binding.rbSea.isChecked = true
-                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.light_sea, resources.newTheme()))
+                binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.light_sea,
+                    resources.newTheme()))
             }
             Colors.RED.toString() -> {
                 binding.rbRed.isChecked = true
-                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.red, resources.newTheme()))
+                binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.red,
+                    resources.newTheme()))
             }
             Colors.PINK.toString() -> {
                 binding.rbPink.isChecked = true
-                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.pink, resources.newTheme()))
+                binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.pink,
+                    resources.newTheme()))
             }
         }
 
         var icon = Icons.BOOK.toString()
         var color = Colors.BLUE.toString()
         binding.radioGroupWithIcons.setOnCheckedChangeListener { _, id ->
-            when(id) {
+            when (id) {
                 R.id.rb_book -> {
                     icon = Icons.BOOK.toString()
                     binding.ivIconOfTask.setImageResource(R.drawable.ic_book)
@@ -164,47 +174,56 @@ class UpdateTaskFragment :
         }
 
         binding.radioGroupWithColors.setOnCheckedChangeListener { _, id ->
-            when(id) {
+            when (id) {
                 R.id.rb_blue -> {
                     color = Colors.BLUE.toString()
-                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.light_blue, resources.newTheme()))
+                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.light_blue,
+                        resources.newTheme()))
                 }
                 R.id.rb_purple -> {
                     color = Colors.PURPLE.toString()
-                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.purple, resources.newTheme()))
+                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.purple,
+                        resources.newTheme()))
                 }
                 R.id.rb_light_orange -> {
                     color = Colors.LIGHT_ORANGE.toString()
-                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.light_orange, resources.newTheme()))
+                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.light_orange,
+                        resources.newTheme()))
                 }
                 R.id.rb_pelorous -> {
                     color = Colors.PELOROUS.toString()
-                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.pelorous, resources.newTheme()))
+                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.pelorous,
+                        resources.newTheme()))
                 }
                 R.id.rb_orange -> {
                     color = Colors.ORANGE.toString()
-                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.orange, resources.newTheme()))
+                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.orange,
+                        resources.newTheme()))
                 }
                 R.id.rb_sea -> {
                     color = Colors.SEA.toString()
-                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.light_sea, resources.newTheme()))
+                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.light_sea,
+                        resources.newTheme()))
                 }
                 R.id.rb_red -> {
                     color = Colors.RED.toString()
-                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.red, resources.newTheme()))
+                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.red,
+                        resources.newTheme()))
                 }
                 R.id.rb_pink -> {
                     color = Colors.PINK.toString()
-                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.pink, resources.newTheme()))
+                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.pink,
+                        resources.newTheme()))
                 }
                 else -> {
                     color = Colors.BLUE.toString()
-                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.light_blue, resources.newTheme()))
+                    binding.colorOfTask.setCardBackgroundColor(resources.getColor(R.color.light_blue,
+                        resources.newTheme()))
                 }
             }
         }
 
-        when(habitArgs.partOfDay) {
+        when (habitArgs.partOfDay) {
             PartOfDay.DOESNTMATTER.toString() -> binding.rbDoesntMatter.isChecked = true
             PartOfDay.MORNING.toString() -> binding.rbMorning.isChecked = true
             PartOfDay.DAY.toString() -> binding.rbDay.isChecked = true
@@ -226,6 +245,10 @@ class UpdateTaskFragment :
         binding.btnOpenRepeats.setOnClickListener {
             binding.linearWithCheckboxes.visibility =
                 if (binding.linearWithCheckboxes.isVisible) View.GONE else View.VISIBLE
+        }
+        binding.btnAdvancedSettings.setOnClickListener {
+            binding.linearLayout.visibility =
+                if (binding.linearLayout.isVisible) View.GONE else View.VISIBLE
         }
 
         binding.btnSave.setOnClickListener {

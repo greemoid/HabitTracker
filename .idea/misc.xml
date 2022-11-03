@@ -9,6 +9,7 @@
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/checkbox_unchecked.xml" value="0.4425" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/custom_checkbox.xml" value="0.4415" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/edit_text_background.xml" value="0.4425" />
+        <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/edit_text_background_second.xml" value="0.433" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/green_checked.xml" value="0.4425" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/green_unchecked.xml" value="0.4425" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/ic_alarm.xml" value="0.4425" />
@@ -75,7 +76,7 @@
         <entry key="..\:/Project/HabitTracker/app/src/main/res/drawable/sea_unchecked.xml" value="0.4425" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/font/gdfgdf.xml" value="0.478125" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/layout/activity_main.xml" value="0.4" />
-        <entry key="..\:/Project/HabitTracker/app/src/main/res/layout/fragment_add_task.xml" value="0.1" />
+        <entry key="..\:/Project/HabitTracker/app/src/main/res/layout/fragment_add_task.xml" value="0.4" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/layout/fragment_task.xml" value="0.440625" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/layout/fragment_tasks_list.xml" value="0.42239583333333336" />
         <entry key="..\:/Project/HabitTracker/app/src/main/res/layout/fragment_update_task.xml" value="0.440625" />

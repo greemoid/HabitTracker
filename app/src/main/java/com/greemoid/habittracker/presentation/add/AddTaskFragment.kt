@@ -35,6 +35,11 @@ class AddTaskFragment :
             binding.linearWithCheckboxes.visibility =
                 if (binding.linearWithCheckboxes.isVisible) View.GONE else View.VISIBLE
         }
+
+        binding.btnAdvancedSettings.setOnClickListener {
+            binding.linearLayout.visibility =
+                if (binding.linearLayout.isVisible) View.GONE else View.VISIBLE
+        }
         var icon = Icons.BOOK.toString()
         var color = Colors.BLUE.toString()
         binding.radioGroupWithIcons.setOnCheckedChangeListener { _, id ->
