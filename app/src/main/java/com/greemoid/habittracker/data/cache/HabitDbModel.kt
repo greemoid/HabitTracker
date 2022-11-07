@@ -7,7 +7,7 @@ import java.io.Serializable
 
 @Entity(tableName = "habit_table")
 data class HabitDbModel(
-    @PrimaryKey(autoGenerate = true) val id: Int = 0,
+    @PrimaryKey(autoGenerate = false) val id: Int,
     @ColumnInfo val title: String,
     @ColumnInfo val icon: String,
     @ColumnInfo val color: String,

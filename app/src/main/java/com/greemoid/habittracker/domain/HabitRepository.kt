@@ -5,7 +5,7 @@ import com.greemoid.habittracker.data.cache.HabitDbModel
 
 interface HabitRepository {
     fun getAllHabits(): LiveData<List<HabitDbModel>>
-    suspend fun addHabit(habit: HabitModel)
+    suspend fun addHabit(habit: HabitDbModel)
     suspend fun updateHabit(habit: HabitDbModel)
     suspend fun deleteHabit(id: Int, habit: HabitDbModel)
 }

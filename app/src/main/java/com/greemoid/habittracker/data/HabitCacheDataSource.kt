@@ -40,8 +40,8 @@ class HabitCacheDataSource @Inject constructor(
         return liveData
     }
 
-    override suspend fun addHabit(habit: HabitModel) {
-        habitDao.addHabit(habit.map())
+    override suspend fun addHabit(habit: HabitDbModel) {
+        habitDao.addHabit(habit)
     }
 
     override suspend fun updateHabit(habit: HabitDbModel) {
