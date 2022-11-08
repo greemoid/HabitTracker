@@ -66,13 +66,14 @@ class TasksListAdapter @Inject constructor(
                         linItem.setBackgroundResource(R.color.background_for_other_views)
                         val totallyDays = habit.totallyDays + 1
                         val streakDays =
-                            if (habit.streakDays == 0) {
-                                1
-                            } else if (habit.streakDays != 0 && habit.date == getYesterday()) {
-                                habit.streakDays + 1
-                            } else {
-                                habit.streakDays
-                            }
+                                if (habit.streakDays == 0) {
+                                    1
+                                } else if (habit.streakDays != 0 && habit.date == getYesterday()) {
+                                    habit.streakDays + 1
+                                } else {
+                                    0
+                                }
+
                         val habitModel = HabitDbModel(
                             id = habit.id,
                             title = habit.title,

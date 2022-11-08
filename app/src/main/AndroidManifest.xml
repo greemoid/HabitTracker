@@ -4,6 +4,7 @@
     package="com.greemoid.habittracker">
 
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
         android:name=".di.HabitTrackerApp"
@@ -26,7 +27,9 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".presentation.notifications.AlarmReceiver"/>
+        <receiver
+            android:name=".presentation.notifications.AlarmReceiver"
+            android:enabled="true" />
     </application>
 
 </manifest>

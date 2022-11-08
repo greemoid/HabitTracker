@@ -18,6 +18,7 @@ import com.greemoid.habittracker.R
 import com.greemoid.habittracker.data.cache.HabitDbModel
 import com.greemoid.habittracker.databinding.FragmentAddTaskBinding
 import com.greemoid.habittracker.presentation.core.BaseFragment
+import com.greemoid.habittracker.presentation.core.MainActivity
 import com.greemoid.habittracker.presentation.core.enums.Colors
 import com.greemoid.habittracker.presentation.core.enums.Icons
 import com.greemoid.habittracker.presentation.core.enums.PartOfDay
@@ -285,12 +286,22 @@ class AddTaskFragment :
             habit.id,
             intent,
             PendingIntent.FLAG_IMMUTABLE)
-        alarmManager.setRepeating(
-            AlarmManager.RTC_WAKEUP,
+
+        val mintent = Intent(requireContext(), MainActivity::class.java)
+        mintent.putExtra("habit", habit)
+        val pendingmIntent = PendingIntent.getBroadcast(requireContext(),
+            habit.id,
+            mintent,
+            PendingIntent.FLAG_IMMUTABLE)
+        alarmManager.setAlarmClock(AlarmManager.AlarmClockInfo(cal.timeInMillis, pendingmIntent),
+            pendingIntent)
+
+        /*alarmManager.setInexactRepeating(
+            AlarmManager.ELAPSED_REALTIME_WAKEUP,
             cal.timeInMillis,
-            AlarmManager.INTERVAL_DAY,
+            AlarmManager.INTERVAL_FIFTEEN_MINUTES,
             pendingIntent
-        )
+        )*/
         Log.d("NOTIFICATION", "added")
     }
 
