@@ -71,7 +71,7 @@ class TasksListAdapter @Inject constructor(
                                 } else if (habit.streakDays != 0 && habit.date == getYesterday()) {
                                     habit.streakDays + 1
                                 } else {
-                                    0
+                                    1
                                 }
 
                         val habitModel = HabitDbModel(
